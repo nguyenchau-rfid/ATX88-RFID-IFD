@@ -29,7 +29,7 @@ public class Main4Activity extends Activity {
         setContentView(R.layout.activity_main4);
         btnPost=(Button)findViewById(R.id.btnPost);
         tvXem=findViewById(R.id.tvDiachi);
-       // localManager.setTrackingGPS_Time();
+        localManager.setTrackingGPS_Time();
         tvXem.setText(localManager.getTrackingGPS_Latitude()+"\n"+localManager.getTrackingGPS_Longitude()+"\n"+
                 localManager.getTrackingGPS_Location()+"\n"+localManager.getTrackingGPS_Time()+"");
         Toast.makeText(getApplicationContext(),
