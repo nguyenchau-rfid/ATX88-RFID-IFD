@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center" >
+    
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+        
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+            
+             <!-- Codabar -->
+            <LinearLayout android:id="@+id/linear_codabar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/codabar"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+              <!-- Code 39 -->
+            <LinearLayout android:id="@+id/linear_code39"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/code39"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+              <!-- Interleaved 2 of 5 -->
+            <LinearLayout android:id="@+id/linear_i2of5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/i2of5"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+             <!-- Code 93 -->
+            <LinearLayout android:id="@+id/linear_code93"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/code93"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+            <!-- NEC 2 of 5 -->
+            <LinearLayout android:id="@+id/linear_nec2of5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nec2of5"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+            <!-- Straight 2 of 5 Industrial -->
+			<LinearLayout android:id="@+id/linear_straight2of5_industrial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/straight2of5_industrial"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+            <!-- Straight 2 of 5 IATA -->
+			<LinearLayout android:id="@+id/linear_straight2of5_iata"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/straight2of5_iata"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+             <!-- Matrix 2 of 5 -->
+			<LinearLayout android:id="@+id/linear_matrix2of5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/matrix2of5"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+            <!-- Code 11 -->
+			<LinearLayout android:id="@+id/linear_code11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/code11"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+            <!-- Code 128-->
+			<LinearLayout android:id="@+id/linear_code128"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/code128"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+            <!-- GS1-128 -->
+			<LinearLayout android:id="@+id/linear_gs1_128"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gs1_128"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+            <!-- TELEPEN -->
+			<LinearLayout android:id="@+id/linear_telepen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp"
+                android:visibility="gone">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/telepen"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"
+                android:visibility="gone"/>
+            
+            <!-- UPC-A -->
+			<LinearLayout android:id="@+id/linear_upca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/upca"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+            <!-- UPC-E0 -->
+			<LinearLayout android:id="@+id/linear_upc_e0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/upc_e0"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+            <!-- EAN/JAN-13 -->
+			<LinearLayout android:id="@+id/linear_ean_jan13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ean_jan13"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+           <!-- EAN/JAN-8 -->
+			<LinearLayout android:id="@+id/linear_ean_jan8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ean_jan8"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+            <!-- MSI -->
+			<LinearLayout android:id="@+id/linear_msi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/msi"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+           <!-- GS1 DataBar -->
+			<LinearLayout android:id="@+id/linear_gs1_databar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gs1_databar"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+            
+            <!-- Codablock A -->
+			<LinearLayout android:id="@+id/linear_codablock_a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/codablock_a"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+            <!-- Codablock F -->
+  			<LinearLayout android:id="@+id/linear_codablock_f"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/codablock_f"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+            
+            <!-- PDF417 -->
+			<LinearLayout android:id="@+id/linear_pdf417"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pdf417"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+           <!-- MicroPDF417 -->
+			<LinearLayout android:id="@+id/linear_micro_pdf417"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/micro_pdf417"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+             <!-- GS1 Composite Codes -->
+ 			<LinearLayout android:id="@+id/linear_gs1_composite_codes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gs1_composite_codes"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+            <!-- QR Code -->
+ 			<LinearLayout android:id="@+id/linear_qr_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/qr_code"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+            
+            <!-- Data Matrix -->
+			<LinearLayout android:id="@+id/linear_data_matrix"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/data_matrix"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+            <!-- MaxiCode -->
+ 			<LinearLayout android:id="@+id/linear_maxicode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+
+ 			    <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/maxicode"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+            <!-- Aztec Code -->
+ 			<LinearLayout android:id="@+id/linear_aztec_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/aztec_code"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+            <!-- Chinese Sensible (Han Xin) Code -->
+ 			<LinearLayout android:id="@+id/linear_han_xin_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/han_xin_code"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+            <!-- Postal Codes - 2D -->
+			<LinearLayout android:id="@+id/linear_postal_codes_2d"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/postal_codes_2d"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+           <!-- Postal Codes - Linear -->
+  			<LinearLayout android:id="@+id/linear_postal_codes_linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/postal_codes_linear"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+            <!-- UPC-A/EAN-13 with Extended Coupon Code -->
+            <LinearLayout android:id="@+id/linear_upca_ean13_extended_coupon_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/upca_ean13_extended_coupon_code"
+                    android:textSize="17sp"/>
+                
+                <TextView android:id="@+id/upca_ean13_extended_coupon_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+            <!-- Coupon GS1 DataBar Output -->
+             <LinearLayout android:id="@+id/linear_coupon_gs1_databar_output"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <CheckBox android:id="@+id/coupon_gs1_databar_output"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/coupon_gs1_databar_output"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+            <!-- Label Code -->
+             <LinearLayout android:id="@+id/linear_label_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp"
+                android:visibility="gone">
+                
+                <CheckBox android:id="@+id/label_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_code"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+            <!-- GS1 Emulation -->
+             <LinearLayout android:id="@+id/linear_gs1_emulation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/gs1_emulation"
+                    android:textSize="17sp"/>
+                
+                <TextView android:id="@+id/gs1_emulation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+            <!-- Video Reverse -->
+             <LinearLayout android:id="@+id/linear_video_reverse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/textview_background_selector"
+                android:padding="16dp">
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/video_reverse"
+                    android:textSize="17sp"/>
+                
+                <TextView android:id="@+id/video_reverse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:textSize="17sp"/>
+                
+            </LinearLayout>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey"/>
+            
+	</LinearLayout>
+        
+    </ScrollView>
+
+</LinearLayout>

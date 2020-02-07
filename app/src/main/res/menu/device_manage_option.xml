@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+	<item android:id="@+id/menu_device_option"
+	    android:title=""
+	    android:icon="@drawable/ic_drawer"
+	    android:showAsAction="always">
+	    
+	    <menu>
+			<item android:id="@+id/menu_log_level"
+	    		android:title="@string/title_log_level"/>
+	    </menu>
+	</item>
+</menu>

@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.atid.app.atx.activity.RfidOptionActivity" >
+    
+	<TextView 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="@string/option_group_rfid"
+	    android:textSize="18sp"
+	    android:textStyle="bold"
+	    android:textColor="@color/white"
+	    android:padding="5dp"
+	    android:background="@color/option_group_background_color" />
+    
+    
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+        
+	
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical">
+	
+	        	        
+			<LinearLayout android:id="@+id/linear_rfid_globalband"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal"
+		        android:background="@drawable/textview_background_selector"
+		        android:padding="8dp">
+		
+					<TextView android:id="@+id/name_rfid_globalband"
+				        android:layout_width="0dp"
+				        android:layout_height="wrap_content"
+				        android:layout_weight="1"
+				        android:gravity="start"
+				        android:text="@string/global_band"
+				        android:textSize="17sp" />
+	    
+				    <TextView android:id="@+id/value_rfid_globalband"
+				        android:layout_width="0dp"
+				        android:layout_height="wrap_content"
+				        android:layout_weight="1"
+				        android:gravity="end"
+				        android:textSize="17sp" />		    
+	       		        
+	        </LinearLayout>
+	
+			<View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey" />
+	
+			<LinearLayout android:id="@+id/linear_rfid_power_gain"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal"
+		        android:background="@drawable/textview_background_selector"
+		        android:padding="8dp">
+		
+					<TextView android:id="@+id/name_rfid_power_gain"
+				        android:layout_width="0dp"
+				        android:layout_height="wrap_content"
+				        android:layout_weight="1"
+				        android:gravity="start"
+				        android:text="@string/power_gain"
+				        android:textSize="17sp" />
+	    
+				    <TextView android:id="@+id/value_rfid_power_gain"
+				        android:layout_width="0dp"
+				        android:layout_height="wrap_content"
+				        android:layout_weight="1"
+				        android:gravity="end"
+				        android:textSize="17sp" />
+	       		        
+	        </LinearLayout>
+	
+			<View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey" />
+					
+			<LinearLayout android:id="@+id/linear_rfid_inventory_time"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal"
+		        android:background="@drawable/textview_background_selector"
+		        android:padding="8dp">
+		
+					<TextView android:id="@+id/name_rfid_inventory_time"
+				        android:layout_width="0dp"
+				        android:layout_height="wrap_content"
+				        android:layout_weight="1"
+				        android:gravity="start"
+				        android:text="@string/inventory_time"
+				        android:textSize="17sp" />
+	    
+				    <TextView android:id="@+id/value_rfid_inventory_time"
+				        android:layout_width="0dp"
+				        android:layout_height="wrap_content"
+				        android:layout_weight="1"
+				        android:gravity="end"
+				        android:textSize="17sp" />
+	       		        
+	        </LinearLayout>
+	
+			<View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey" />
+					
+			<LinearLayout android:id="@+id/linear_rfid_idle_time"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal"
+		        android:background="@drawable/textview_background_selector"
+		        android:padding="8dp">
+		
+					<TextView android:id="@+id/name_rfid_idle_time"
+				        android:layout_width="0dp"
+				        android:layout_height="wrap_content"
+				        android:layout_weight="1"
+				        android:gravity="start"
+				        android:text="@string/idle_time"
+				        android:textSize="17sp" />
+	    
+				    <TextView android:id="@+id/value_rfid_idle_time"
+				        android:layout_width="0dp"
+				        android:layout_height="wrap_content"
+				        android:layout_weight="1"
+				        android:gravity="end"
+				        android:textSize="17sp" />
+	       		        
+	        </LinearLayout>
+	        
+	        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey" />
+	
+			<LinearLayout android:id="@+id/linear_rfid_operation_time"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal"
+		        android:background="@drawable/textview_background_selector"
+		        android:padding="8dp">
+		
+					<TextView android:id="@+id/name_rfid_operation_time"
+				        android:layout_width="0dp"
+				        android:layout_height="wrap_content"
+				        android:layout_weight="1"
+				        android:gravity="start"
+				        android:text="@string/operation_time"
+				        android:textSize="17sp" />
+	    
+				    <TextView android:id="@+id/value_rfid_operation_time"
+				        android:layout_width="0dp"
+				        android:layout_height="wrap_content"
+				        android:layout_weight="1"
+				        android:gravity="end"
+				        android:textSize="17sp" />
+	       		        
+	        </LinearLayout>
+	        
+	        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey" />
+	   
+			<LinearLayout android:id="@+id/linear_rfid_auto_save"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal"
+		        android:background="@drawable/textview_background_selector"
+		        android:padding="8dp">
+		
+					<TextView android:id="@+id/name_rfid_auto_save"
+				        android:layout_width="0dp"
+				        android:layout_height="wrap_content"
+				        android:layout_weight="1"
+				        android:gravity="start"
+				        android:text="@string/auto_save_mode"
+				        android:textSize="17sp" />
+	    
+					<Switch android:id="@+id/swt_auto_save_mode"
+					    style="@style/value_switch"/>
+					
+	        </LinearLayout>
+	        
+	        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey" />    
+	   
+			<LinearLayout android:id="@+id/linear_rfid_report_rssi"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal"
+		        android:background="@drawable/textview_background_selector"
+		        android:padding="8dp">
+		
+					<TextView android:id="@+id/name_rfid_report_rssi"
+				        android:layout_width="0dp"
+				        android:layout_height="wrap_content"
+				        android:layout_weight="1"
+				        android:gravity="start"
+				        android:text="@string/report_rssi"
+				        android:textSize="17sp" />
+	    
+					<Switch android:id="@+id/swt_report_rssi"
+					    style="@style/value_switch"/>
+					       		        
+	        </LinearLayout>
+	
+			<View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey" />
+	
+			<!-- Current Link Profile (Temporarily) -->
+			<LinearLayout android:id="@+id/linear_rfid_current_link_profile"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal"
+		        android:background="@drawable/textview_background_selector"
+		        android:padding="8dp">
+		
+					<TextView android:id="@+id/name_rfid_current_link_profile"
+				        android:layout_width="0dp"
+				        android:layout_height="wrap_content"
+				        android:layout_weight="2"
+				        android:gravity="start"
+				        android:text="@string/current_link_profile"
+				        android:textSize="17sp" />
+	    
+				    <TextView android:id="@+id/value_rfid_current_link_profile"
+				        android:layout_width="0dp"
+				        android:layout_height="wrap_content"
+				        android:layout_weight="1"
+				        android:gravity="end"
+				        android:textSize="17sp" />
+	       		        
+	        </LinearLayout>
+			
+	        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey" /> 
+	                    				
+			<!-- Default Link Profile (Permanently) -->
+			<LinearLayout android:id="@+id/linear_rfid_default_link_profile"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal"
+		        android:background="@drawable/textview_background_selector"
+		        android:padding="8dp">
+		
+					<TextView android:id="@+id/name_rfid_default_link_profile"
+				        android:layout_width="0dp"
+				        android:layout_height="wrap_content"
+				        android:layout_weight="2"
+				        android:gravity="start"
+				        android:text="@string/default_link_profile"
+				        android:textSize="17sp" />
+	    
+				    <TextView android:id="@+id/value_rfid_default_link_profile"
+				        android:layout_width="0dp"
+				        android:layout_height="wrap_content"
+				        android:layout_weight="1"
+				        android:gravity="end"
+				        android:textSize="17sp" />
+	       		        
+	        </LinearLayout>
+			
+	        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey" /> 
+	        
+	        <LinearLayout android:id="@+id/linear_rfid_selection_mask"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal"
+		        android:background="@drawable/textview_background_selector"
+		        android:padding="8dp">
+		
+		       	<TextView android:id="@+id/name_rfid_selection_mask"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:gravity="start"
+			        android:text="@string/selection_mask"
+			        android:textSize="17sp"
+			        android:background="@drawable/textview_background_selector" />
+	       		        
+	        </LinearLayout>		
+	 
+	        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey" /> 
+	                    				
+			<LinearLayout android:id="@+id/linear_rfid_inventory_set"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal"
+		        android:background="@drawable/textview_background_selector"
+		        android:padding="8dp">
+		
+		       	<TextView android:id="@+id/name_rfid_inventory_set"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:gravity="start"
+			        android:text="@string/inventory_set"
+			        android:textSize="17sp"
+			        android:background="@drawable/textview_background_selector" />
+	       		        
+	        </LinearLayout>		
+	               		
+	        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey" /> 
+	                    				
+			<LinearLayout android:id="@+id/linear_rfid_inventory_algorithm"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal"
+		        android:background="@drawable/textview_background_selector"
+		        android:padding="8dp">
+		
+		       	<TextView android:id="@+id/name_rfid_inventory_algorithm"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:gravity="start"
+			        android:text="@string/inventory_algorithm"
+			        android:textSize="17sp"
+			        android:background="@drawable/textview_background_selector" />
+	       		        
+	        </LinearLayout>													
+	
+			<View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey" />
+					
+			<LinearLayout android:id="@+id/linear_rfid_frequency"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal"
+		        android:background="@drawable/textview_background_selector"
+		        android:padding="8dp">
+	
+	           	<TextView android:id="@+id/name_rfid_frequency"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:gravity="start"
+			        android:text="@string/frequency"
+			        android:textSize="17sp"
+			        android:background="@drawable/textview_background_selector" />
+	       		        
+	        </LinearLayout>		
+	        		
+			<View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey" />
+	           
+			<LinearLayout android:id="@+id/linear_rfid_tag_speed"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal"
+		        android:background="@drawable/textview_background_selector"
+		        android:padding="8dp"
+		        android:visibility="visible">
+		
+					<TextView android:id="@+id/name_rfid_tag_speed"
+				        android:layout_width="0dp"
+				        android:layout_height="wrap_content"
+				        android:layout_weight="1"
+				        android:gravity="start"
+				        android:text="@string/tag_speed"
+				        android:textSize="17sp" />
+	    
+					<Switch android:id="@+id/swt_tag_speed"
+					    style="@style/value_switch"/>
+					       		        
+	        </LinearLayout>
+	
+			<View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/lightgrey" />
+						
+	    </LinearLayout>
+        
+    </ScrollView>
+		
+</LinearLayout>

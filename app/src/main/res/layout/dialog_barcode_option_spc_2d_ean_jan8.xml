@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+    
+	<ScrollView 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    tools:ignore="UselessParent">
+	    
+	    <LinearLayout 
+			android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical">
+	        
+	        <!-- EAN/JAN-8 Check Digit -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/ean_jan8_check_digit"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/ean_jan8_check_digit"/>
+	            
+	        </LinearLayout>	        
+	        
+	        <!-- EAN/JAN-8 Addenda 2 Digit -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/ean_jan8_ddenda_2_digit"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/ean_jan8_ddenda_2_digit"/>
+	            
+	            	            
+	        </LinearLayout>
+	        	        
+	        <!-- EAN/JAN-8 Addenda 5 Digit -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/ean_jan8_addenda_5_digit"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/ean_jan8_addenda_5_digit"/>
+	            	            
+	        </LinearLayout>
+	        	        
+	        <!-- EAN/JAN-8 Addenda Required -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/ean_jan8_addenda_required"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/ean_jan8_addenda_required"/>
+	            	            
+	            	            
+	        </LinearLayout>
+	        	        
+	        <!-- EAN/JAN-8 Addenda Separator -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/ean_jan8_addenda_separator"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/ean_jan8_addenda_separator"/>
+	            	            
+	            	            
+	        </LinearLayout>	        
+	        
+	    </LinearLayout>
+	    
+	</ScrollView>
+</LinearLayout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+    
+	<ScrollView 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    tools:ignore="UselessParent">
+	    
+	    <LinearLayout 
+			android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical">
+	        
+	        <!-- Convert UPC-A to EAN-13 -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/convert_upca_to_ean13"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/convert_upca_to_ean13"/>
+	            
+	        </LinearLayout>	        
+	        
+	        <!-- EAN/JAN-13 Check Digit -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/ean_jan13_check_digit"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/ean_jan13_check_digit"/>
+	            
+	            	            
+	        </LinearLayout>
+	        	        
+	        <!-- EAN/JAN-13 Addenda 2 Digit -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/ean_jan13_addenda_2_digit"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/ean_jan13_addenda_2_digit"/>
+	            
+	            	            
+	        </LinearLayout>
+	        	        
+	        <!-- EAN/JAN-13 Addenda 5 Digit -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/ean_jan13_addenda_5_digit"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/ean_jan13_addenda_5_digit"/>
+	            
+	            	            
+	        </LinearLayout>
+	        	        
+	        <!-- EAN/JAN-13 Addenda Required -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/ean_jan13_addenda_required"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/ean_jan13_addenda_required"/>
+	            
+	            	            
+	        </LinearLayout>
+	        	        
+	        <!-- EAN/JAN-13 Addenda Separator -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/ean_jan13_addenda_separator"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/ean_jan13_addenda_separator"/>
+	            
+	            	            
+	        </LinearLayout>
+	        	        
+	        <!-- ISBN Translate -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/isbn_translate"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/isbn_translate"/>
+	            
+	            	            
+	        </LinearLayout>	        
+	        
+	    </LinearLayout>
+	    
+	</ScrollView>
+</LinearLayout>

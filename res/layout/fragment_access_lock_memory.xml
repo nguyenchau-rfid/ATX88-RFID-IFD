@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    tools:context="com.atid.app.atx.activity.view.fragment.AccessLockMemory">
+    
+    <LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:background="@color/access_title_background_color"
+	    android:padding="2dp">
+    
+	    <TextView
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/access_result"
+	        android:textColor="@color/white"
+	        android:background="@color/access_title_background_color"/>
+	    
+	</LinearLayout>
+	
+	<LinearLayout android:id="@+id/layout_result"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:background="@color/grey"
+	    android:padding="5dp">
+	    
+	    <TextView android:id="@+id/result"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:text="@string/access_result"
+	        android:textSize="14sp"
+	        android:textColor="@color/aquamarine"/>
+	    
+	    <TextView android:id="@+id/data"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:text="@string/access_data_noti"
+	        android:textSize="14sp"
+	        android:textColor="@color/aquamarine"/>
+	    
+	    <LinearLayout
+	        style="@style/horizontal_layout">
+	            
+	    	    <TextView android:id="@+id/rssi"
+			        android:layout_width="0dp"
+			        android:layout_height="wrap_content"
+			        android:layout_weight="1"
+			        android:gravity="start"
+			        android:text="0"
+			        android:textSize="14sp"
+			        android:textColor="@color/aquamarine"
+			        tools:ignore="HardcodedText,UselessLeaf"/>
+
+	    	    <TextView android:id="@+id/phase"
+			        android:layout_width="0dp"
+			        android:layout_height="wrap_content"
+			        android:layout_weight="1"
+			        android:gravity="end"
+			        android:text="0"
+			        android:textSize="14sp"
+			        android:textColor="@color/aquamarine"
+			        tools:ignore="HardcodedText,UselessLeaf"/>
+	    	    	    	    	    	            
+
+	    </LinearLayout>
+	    
+	</LinearLayout>
+	
+	<View style="@style/vertical_split_5dp"/>
+	
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:background="@color/access_title_background_color"
+	    android:padding="2dp">
+	
+	    <TextView
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/access_param_setting"
+	        android:textColor="@color/white"
+	        android:background="@color/access_title_background_color"/>
+			
+	</LinearLayout>
+    
+    <ScrollView style="@style/param_scrollview"
+        android:background="@drawable/frame_rectangle">
+	    
+	    <!-- Param Buttons -->
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical"
+	        tools:ignore="UselessParent">
+	        
+	        <LinearLayout style="@style/horizontal_layout">
+	            <!-- Kill Password -->
+	            <ToggleButton android:id="@+id/tb_kill_password"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:textOn="@string/kill_password"
+	                android:textOff="@string/kill_password"
+	                android:textColor="@drawable/tb_text_color_selector"
+	                android:background="@drawable/tb_background_color_selector"/>
+	            
+	            <View style="@style/horizontal_split_5dp"/>
+	            
+	            <!-- Access Password -->
+	            <ToggleButton android:id="@+id/tb_access_password"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:textOn="@string/access_password"
+	                android:textOff="@string/access_password"
+	                android:textColor="@drawable/tb_text_color_selector"
+	                android:background="@drawable/tb_background_color_selector"/>
+	        </LinearLayout>
+	        
+	        <View style="@style/vertical_split_5dp"/>
+	        
+	        <LinearLayout style="@style/horizontal_layout">
+	            <!-- EPC -->
+	            <ToggleButton android:id="@+id/tb_epc"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:textOn="@string/epc"
+	                android:textOff="@string/epc"
+	                android:textColor="@drawable/tb_text_color_selector"
+	                android:background="@drawable/tb_background_color_selector"/>
+	            
+	            <View style="@style/horizontal_split_5dp"/>
+	            
+	            <!-- TID -->
+	            <ToggleButton android:id="@+id/tb_tid"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:textOn="@string/tid"
+	                android:textOff="@string/tid"
+	                android:textColor="@drawable/tb_text_color_selector"
+	                android:background="@drawable/tb_background_color_selector"/>
+	            
+	            <View style="@style/horizontal_split_5dp"/>
+	            
+	            <!-- User -->
+	            <ToggleButton android:id="@+id/tb_user"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:text="@string/user"
+	                android:textOn="@string/user"
+	                android:textOff="@string/user"
+	                android:textColor="@drawable/tb_text_color_selector"
+	                android:background="@drawable/tb_background_color_selector"/>
+	        </LinearLayout>
+	        
+	        <View style="@style/vertical_split_5dp"/>
+	        
+	        <!-- Password -->
+	        <LinearLayout style="@style/horizontal_layout">
+	        	<TextView style="@style/option_caption_textview"
+	        	    android:text="@string/password"/>
+	        	
+	        	<View style="@style/horizontal_split_5dp"/>
+	        	
+	        	<TextView android:id="@+id/password"
+	        	    style="@style/option_value_textview"
+	        	    android:layout_weight="1.5"
+	        	    tools:ignore="InefficientWeight"/>
+	        </LinearLayout>
+	        
+	    </LinearLayout>
+        
+    </ScrollView>
+    
+    <View style="@style/vertical_split_5dp"/>
+    
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:background="@color/access_title_background_color"
+	    android:padding="2dp">
+    
+	    <TextView
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/access_lock_select"
+	        android:textColor="@color/white"
+	        android:background="@color/access_title_background_color"/>
+
+	</LinearLayout>
+    
+    <RadioGroup android:id="@+id/lock_select_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/frame_rectangle"
+        android:padding="8dp">
+        
+        <RadioButton android:id="@+id/type_lock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/action_lock"
+            android:button="@drawable/rdb_lock_select_type_lock_selector"/>
+        
+        <RadioButton android:id="@+id/type_unlock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/action_unlock"
+            android:button="@drawable/rdb_lock_select_type_unlock_selector"/>
+        
+        <RadioButton android:id="@+id/type_permalock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/action_permalock"
+            android:button="@drawable/rdb_lock_select_type_perma_lock_selector"/>
+        
+    </RadioGroup>
+    
+
+    
+</LinearLayout>

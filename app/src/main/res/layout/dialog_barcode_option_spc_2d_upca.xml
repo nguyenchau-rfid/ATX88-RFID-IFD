@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+    
+	<ScrollView 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    tools:ignore="UselessParent">
+	    
+	    <LinearLayout 
+			android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical">
+	        
+	        <!-- UPC-A Check Digit -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/upca_check_digit"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/upca_check_digit"/>
+	            
+	        </LinearLayout>
+	        
+	        <!-- UPC-A Number System -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/upca_number_system"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/upca_number_system"/>
+	            
+	        </LinearLayout>
+	        
+	        <!-- UPC-A Addenda 2 Digit -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/upca_addenda_2_digit"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/upca_addenda_2_digit"/>
+	            
+	        </LinearLayout>
+	        
+	        <!-- UPC-A Addenda 5 Digit -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/upca_addenda_5_digit"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/upca_addenda_5_digit"/>
+	            
+	        </LinearLayout>
+	        
+	        <!-- UPC-A Addenda Required -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/upca_addenda_required"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/upca_addenda_required"/>
+	            
+	        </LinearLayout>
+	        
+	        <!-- Addenda Timeout -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal"
+	            android:visibility="gone">
+	            
+	            <TextView 
+	                style="@style/option_caption_textview"
+	                android:text="@string/addenda_timeout"/>
+	            
+	            <View style="@style/horizontal_split_5dp"/>
+	            
+	            <TextView android:id="@+id/addenda_timeout"
+	                style="@style/option_value_textview"
+	                android:layout_weight="1"
+	                tools:ignore="InefficientWeight"/>
+	            
+	        </LinearLayout>
+	        
+	        <!-- UPC-A Addenda Separator -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/upca_addenda_separator"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/upca_addenda_separator"/>
+	            	            
+	        </LinearLayout>
+	        
+	    </LinearLayout>
+	    
+	</ScrollView>
+</LinearLayout>

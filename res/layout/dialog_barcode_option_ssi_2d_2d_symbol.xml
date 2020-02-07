@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+    
+	<ScrollView
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    tools:ignore="UselessParent">
+	    
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical">
+	    
+   	        <!-- Code 128 Emulation -->
+	        <LinearLayout
+	        	android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+	        	android:orientation="horizontal">
+
+	            <CheckBox android:id="@+id/code128_emulation"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/code128_emulation"/>
+	            
+	        </LinearLayout>	        
+	        
+   	        <!-- Data Matrix Inverse -->
+	        <LinearLayout
+	        	android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+	        	android:orientation="horizontal">
+	        
+	            <TextView 
+	                style="@style/option_caption_textview"
+	                android:text="@string/data_matrix_inverse"/>
+	            
+	            <View style="@style/horizontal_split_5dp"/>
+	            
+	            <TextView android:id="@+id/data_matrix_inverse"
+	                style="@style/option_value_textview"
+	                android:layout_weight="1"
+	                tools:ignore="InefficientWeight"/>
+	            
+			</LinearLayout>
+				 
+   	        <!-- Decode Mirror Images (Data Matrix Only) -->
+	        <LinearLayout
+	        	android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+	        	android:orientation="vertical">
+	        
+	            <TextView 
+	                style="@style/option_caption_vertical_textview"
+	                android:text="@string/decode_mirror_images"/>
+	            
+	            <View style="@style/vertical_split_5dp"/>
+	            
+	            <TextView android:id="@+id/decode_mirror_images"
+	                style="@style/option_value_vertical_textview"/>
+	            	            
+			</LinearLayout>	 
+			
+   	        <!-- QR Inverse -->
+	        <LinearLayout
+	        	android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+	        	android:orientation="horizontal">
+	        
+	            <TextView 
+	                style="@style/option_caption_textview"
+	                android:text="@string/qr_inverse"/>
+	            
+	            <View style="@style/horizontal_split_5dp"/>
+	            
+	            <TextView android:id="@+id/qr_inverse"
+	                style="@style/option_value_textview"
+	                android:layout_weight="1"
+	                tools:ignore="InefficientWeight"/>
+	            
+			</LinearLayout>
+				        
+   	        <!-- Aztec Inverse -->
+	        <LinearLayout
+	        	android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+	        	android:orientation="horizontal">
+	        
+	            <TextView 
+	                style="@style/option_caption_textview"
+	                android:text="@string/aztec_inverse"/>
+	            
+	            <View style="@style/horizontal_split_5dp"/>
+	            
+	            <TextView android:id="@+id/aztec_inverse"
+	                style="@style/option_value_textview"
+	                android:layout_weight="1"
+	                tools:ignore="InefficientWeight"/>
+	            
+			</LinearLayout>
+				 
+   	        <!-- Han Xin Inverse -->
+	        <LinearLayout
+	        	android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+	        	android:orientation="horizontal">
+	        
+	            <TextView 
+	                style="@style/option_caption_textview"
+	                android:text="@string/han_xin_inverse"/>
+	            
+	            <View style="@style/horizontal_split_5dp"/>
+	            
+	            <TextView android:id="@+id/han_xin_inverse"
+	                style="@style/option_value_textview"
+	                android:layout_weight="1"
+	                tools:ignore="InefficientWeight"/>
+	            
+			</LinearLayout>	 
+	        	        	        	            	        
+	    </LinearLayout>
+	    
+	</ScrollView>
+</LinearLayout>

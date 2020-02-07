@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/SendMail"
+        android:icon="@android:drawable/ic_menu_my_calendar"
+        android:title="Send Mail"
+         />
+
+    <item
+        android:id="@+id/InvKiot"
+        android:icon="@android:drawable/ic_menu_recent_history"
+        android:title="Tồn KiotViet"
+         />
+    <item
+        android:id="@+id/FindProduct"
+        android:icon="@android:drawable/ic_menu_recent_history"
+        android:title="Tìm Kiếm Sản Phẩm"
+        />
+    <item
+        android:id="@+id/FindPairedWithTagID"
+        android:icon="@android:drawable/ic_menu_recent_history"
+        android:title="Check Giày Đồng Đôi"
+        />
+</menu>

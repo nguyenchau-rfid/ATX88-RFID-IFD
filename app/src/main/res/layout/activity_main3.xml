@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:orientation="vertical"
+        tools:context=".Main3Activity" >
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="374dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal|top|center_vertical"
+        android:text="Tìm Kiếm Mã Sản Phẩm"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <View style="@style/vertical_split_5dp" />
+    <!-- Sản phẩm - RFID/KIOTVIET -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtSanPham"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|top|center_vertical"
+            android:text="Sản Phẩm"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <!-- Count -->
+
+        <TextView
+            android:id="@+id/txtSLRFID_KIOT"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="right|top"
+            android:text="RFID   | KiotViet"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+    <!-- Data List -->
+    <ListView android:id="@+id/data_findproduct"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        style="@style/frame_round" />
+
+    <View style="@style/vertical_split_5dp" />
+
+    <LinearLayout
+        style="@style/horizontal_layout"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Count -->
+            <LinearLayout android:id="@+id/linear_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:ignore="UselessParent" >
+                <TextView
+                    style="@style/count_value_horizontal"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:text="@string/tag_count"
+                    android:textSize="14sp" />
+
+                <TextView android:id="@+id/count"
+                    style="@style/count_value_horizontal"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:textColor="@color/count"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <TextView android:id="@+id/total_count"
+                    style="@style/count_value_horizontal"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:textColor="@color/total_count"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText,UselessLeaf" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View style="@style/vertical_split_5dp" />
+
+    <LinearLayout
+        style="@style/horizontal_layout"
+        >
+
+        <!-- Buttons -->
+            <LinearLayout style="@style/horizontal_layout" >
+                <Button
+                    android:id="@+id/Find"
+                    style="@style/action_parent_size_button"
+                    android:layout_width="186dp"
+                    android:text="Tìm" />
+
+                <Button
+                    android:id="@+id/Quaylai"
+                    style="@style/action_full_size_button"
+                    android:text="Quay Lại" />
+
+
+            </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

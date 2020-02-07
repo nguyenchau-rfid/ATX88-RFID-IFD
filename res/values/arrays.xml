@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string-array name="view_name">
+        <item>Inventory</item>
+        <item>Stored Data</item>
+        <item>Access Memory</item>
+        <item>Device Options</item>
+    </string-array>
+    
+    <string-array name="mask_6c_select_action">
+        <item>Tag Matching is assert SL\r\nTag Not-Matching is deassert SL</item>
+        <item>Tag Matching is assert SL\r\nTag Not-Matching is do nothing</item>
+        <item>Tag Matching is do nothing\r\nTag Not-Matching is deassert SL</item>
+        <item>Tag Matching is negate SL\r\nTag Not-Matching is do nothing</item>
+        <item>Tag Matching is deassert SL\r\nTag Not-Matching is assert SL</item>
+        <item>Tag Matching is deassert SL\r\nTag Not-Matching is do nothing</item>
+        <item>Tag Matching is do nothing\r\nTag Not-Matching is assert SL</item>
+        <item>Tag Matching is do nothing\r\nTag Not-Matching is negate SL</item>
+	</string-array>
+    
+    <string-array name="mask_6c_session_action">
+        <item>Tag Matching is inventoried→A\r\nTag Not-Matching is inventoried→B</item>
+        <item>Tag Matching is inventoried→A\r\nTag Not-Matching is do nothing</item>
+        <item>Tag Matching is do nothing\r\nTag Not-Matching is inventoried→B</item>
+        <item>Tag Matching is A→B, B→A\r\nTag Not-Matching is do nothing</item>
+        <item>Tag Matching is inventoried→B\r\nTag Not-Matching is inventoried→A</item>
+        <item>Tag Matching is inventoried→B\r\nTag Not-Matching is do nothing</item>
+        <item>Tag Matching is do nothing\r\nTag Not-Matching is inventoried→A</item>
+        <item>Tag Matching is do nothing\r\nTag Not-Matching is A→B, B→A</item>
+    </string-array>
+
+    <string-array name="option_group">
+        <item>Device Options</item>
+    </string-array>
+
+    <string-array name="select_flag">
+        <item>SL</item>
+        <item>~SL</item>
+        <item>All</item>
+    </string-array>
+    
+    <string-array name="notify_method">
+        <item>Beep</item>
+        <item>Vibrate</item>
+        <item>Light</item>
+    </string-array>
+    
+</resources>

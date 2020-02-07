@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+    
+	<ScrollView
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    tools:ignore="UselessParent">
+	    
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical">
+	    
+	        <!-- isbn format -->
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical">
+	            
+	            <TextView 
+	                style="@style/option_caption_vertical_textview"
+	                android:text="@string/bookland_isbn_format"/>
+	            
+	            <View style="@style/vertical_split_5dp"/>
+	            
+	            <TextView android:id="@+id/bookland_isbn_format"
+	                style="@style/option_value_vertical_textview"/>
+	            
+	        </LinearLayout>
+	        
+	        <!-- Decode UPC/EAN/JAN Supplementals -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical">
+
+	            <TextView 
+	                style="@style/option_caption_vertical_textview"
+	                android:text="@string/decode_upc_ean_jan_supplematals"/>
+	            
+	            <View style="@style/vertical_split_5dp"/>
+	            
+	            <TextView android:id="@+id/decode_upc_ean_jan_supplementals"
+	                style="@style/option_value_vertical_textview"/>
+	            	            	            
+	        </LinearLayout>
+	        
+	        <!-- UPC/EAN/JAN Supplemental Redundancy -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical">
+	            
+	            <TextView 
+	                style="@style/option_caption_vertical_textview"
+	                android:text="@string/upc_ean_jan_supplemental_redundancy"/>
+	            
+	            <View style="@style/vertical_split_5dp"/>
+	            
+	            <TextView android:id="@+id/upc_ean_jan_supplemental_redundancy"
+	                style="@style/option_value_vertical_textview"/>
+	            	            
+	        </LinearLayout>
+	        
+	        <!-- Transmit UPC-A Check Digit -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/transmit_upc_a_check_digit"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/transmit_upc_a_check_digit"/>
+	            	            
+	        </LinearLayout>
+	        
+	        <!-- Transmit UPC-E Check Digit -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/transmit_upc_e_check_digit"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/transmit_upc_e_check_digit"/>
+	            
+	        </LinearLayout>
+	        
+	        <!-- Transmit UPC-E1 Check Digit -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/transmit_upc_e1_check_digit"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/transmit_upc_e1_check_digit"/>
+	            
+	        </LinearLayout>
+
+	        <!-- UPC-A Preamble -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical">
+	            
+	            <TextView 
+	                style="@style/option_caption_vertical_textview"
+	                android:text="@string/upc_a_preamble"/>
+	            
+	            <View style="@style/vertical_split_5dp"/>
+	            
+	            <TextView android:id="@+id/upc_a_preamble"
+	                style="@style/option_value_vertical_textview"/>
+	            	            
+	        </LinearLayout>
+	        
+	        <!-- UPC-E Preamble -->
+			<LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical">
+	            
+	            <TextView 
+	                style="@style/option_caption_vertical_textview"
+	                android:text="@string/upc_e_preamble"/>
+	            
+	            <View style="@style/vertical_split_5dp"/>
+	            
+	            <TextView android:id="@+id/upc_e_preamble"
+	                style="@style/option_value_vertical_textview"/>
+	            	            
+	        </LinearLayout>
+	        
+	        <!-- UPC-E1 Preamble -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical">
+	            
+	            <TextView 
+	                style="@style/option_caption_vertical_textview"
+	                android:text="@string/upc_e1_preamble"/>
+	            
+	            <View style="@style/vertical_split_5dp"/>
+	            
+	            <TextView android:id="@+id/upc_e1_preamble"
+	                style="@style/option_value_vertical_textview"/>
+	            	            
+	        </LinearLayout>
+	        
+	        <!-- Convert UPC-E to UPC-A -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+				<CheckBox android:id="@+id/convert_upc_e_to_upc_a"
+				    android:layout_width="wrap_content"
+				    style="@style/caption_textview"
+				    android:text="@string/convert_upc_e_to_upc_a"/>
+				    	                        
+	        </LinearLayout>
+
+	        <!-- Convert UPC-E1 to UPC-A -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/convert_upcd_e1_to_upc_a"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/convert_upcd_e1_to_upc_a"/>
+	            
+	        </LinearLayout>
+	        
+	        <!-- EAN-8/JAN-8 Extend -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/ean8_jan8_extend"
+	                android:layout_width="match_parent"
+	                style="@style/caption_textview"
+	                android:text="@string/ean8_jan8_extend"/>
+	            
+	        </LinearLayout>
+	        
+	        <!-- UPC/EAN Security Level -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical">
+	            
+	            <TextView 
+	                style="@style/option_caption_vertical_textview"
+	                android:text="@string/security_level"/>
+	            
+	            <View style="@style/vertical_split_5dp"/>
+	            
+	            <TextView android:id="@+id/upc_ean_security_level"
+	                style="@style/option_value_vertical_textview"/>
+	            	            
+	        </LinearLayout>
+	        	        
+	        <!-- Coupon Report -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical">
+	            
+	            <TextView 
+	                style="@style/option_caption_vertical_textview"
+	                android:text="@string/coupon_report"/>
+	            
+	            <View style="@style/vertical_split_5dp"/>
+	            
+	            <TextView android:id="@+id/coupon_report"
+	                style="@style/option_value_vertical_textview"/>
+	                
+	            	
+	        </LinearLayout>
+	        
+	    </LinearLayout>
+	    
+	</ScrollView>
+	
+</LinearLayout>

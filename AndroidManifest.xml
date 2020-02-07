@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+Release History
+1.1.26.2017011800 :	OptionView에 GlobalBand정보를 출력하도록 수정
+1.2.31.2017021000 : AT388 N36XX모듈 지원
+1.2.32.2017021500 : AT388 SE965 지원 및 N36XX, N668X Barcode Type 지원
+1.2.33.2017021501 : AT388 SE965, SE4710, N36XX, N668X Barcode Type 버그 수정
+1.3.1.2017031200  : ATx88 SDK 구조 변경에 따른 App 기능 변경
+1.3.2.2017031300  : 바코드 옵션 적용 안되는 부분 정리
+1.3.3.2017031500  : ATx88 Demo에서 Realtime permission 추가
+1.4.1.2017042800  : Operation 진행중  이전화면으로 나올때 stop 하도록 수정.
+					AT188N일때 default를 전송하면 power 값이 300으로 읽혀서, max(260) 값으로 표시하도록 수정. 
+					Bluetooth 전원이 꺼져 있는 상태로 검색, 연결을 시도할 경우 Toast를 띄워 알리도록 수정. 
+1.4.2.2017050100 : ATSL 적용					
+1.4.3.2017051900 : WakeLock 적용
+				   Barcode Charset 설정 메뉴 추가.
+				   Stored에서 Remove 후 버튼 잘못 반전되는 문제 수정.
+1.4.4.2017052900 : Barcode가 없을때 초기 화면에서 디바이스 연결후 inventory 화면으로 넘어가지 않는 문제 수정.
+				   Inventory 화면에서 reading 진행중 long touch를 하면 stop하도록 수정.
+				   Barcode가 없는 경우, RFID 메뉴에 진입하지 못하도록 수정.
+				   Option의 항목들을 연속으로 눌러도 설정창이 여러개 뜨지 않도록 수정.
+				   Mask 메뉴 로딩중 취소 했을 때 event listener를 삭제하지 않는 문제 수정.
+				   Inventory 진행중 다른 메뉴로 진입할 때 stop하고 진입하도록 수정.
+1.4.5.2017061300 : WiFi 권한 및 체크 루틴 삭제.				   
+1.4.6.2017091901 : 	1. UI 변경.
+					   - Menu 구성 ( Inventory , Stored Data , Access Memory , Device Option )
+					   - Option Menu 에서 RFID , Barcode Option 별도 처리 함. 
+					   - ATS100 전용 Key Trigger Event 기능 추가.
+1.4.7.2017110602 : 	1. Barcode Detail Option 설정 추가. 
+						- SSI 1D/2D Barcode Option , SPC 2D Barcode Option.
+					2. Barcode Postal Codes 설정 추가. ( SPC Only )
+					3. Barcode Option 추가.
+						- Barcode Reading 반복 기능  설정 추가  및 GlobalData 저장 .
+					4. RFID Option 추가.
+						- RFID Link Profile 설정 추가. 
+						- RFID Inventory Reading Speed 표시 설정 추가 및 GlobalData 저장 .
+					5. SDK Log Level 설정 추가.
+					6. Wifi 관련 source 제거.
+					7. DataListAdapter 내 Tag Update Thread 처리 제거.
+					8. atid.lib 1.1.7.9 적용.
+					9. atid.lib.atx88 1.3.0.3 적용.
+					10. atid.lib.module.barcode 1.0.0.4 적용.
+					11. atid.lib.module.rfid.uhf 1.0.0.3 적용.
+					12. atid.lib.reader 1.0.0.5 적용.
+					13. atid.lib.transport 1.0.1.3 적용.
+					14. atid.lib.util 4.3.1.12 적용.
+					15. Android SDK 8.0 적용.
+ -->
+ 
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.atid.app.atx"
+    android:versionCode="2017110603"
+    android:versionName="1.4.7.2017110603" xmlns:tools="http://schemas.android.com/tools" tools:ignore="RtlEnabled">
+
+    <uses-sdk
+        android:minSdkVersion="17"
+        android:targetSdkVersion="26" />
+    
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <!--
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+	-->
+	<uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>
+    
+    <application
+        android:allowBackup="true"
+        android:vmSafeMode="true"
+	    android:allowClearUserData="true"
+	    android:hardwareAccelerated="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.atid.app.atx.activity.DeviceManageActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.atid.app.atx.activity.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="MainActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.atid.app.atx.activity.RegistDeviceActivity"
+            android:label="@string/app_regist_device_name"
+            android:screenOrientation="portrait" >
+            <intent-filter >
+                <action android:name="com.atid.app.atx.activity.RegistDeviceActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.atid.app.atx.activity.RfidOptionActivity"
+            android:label="@string/title_rfid_option"
+            android:screenOrientation="portrait" >
+            <intent-filter >
+                <action android:name="com.atid.app.atx.activity.RfidOptionActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.atid.app.atx.activity.BarcodeOptionActivity"
+            android:label="@string/title_barcode_option"
+            android:screenOrientation="portrait" >
+            <intent-filter >
+                <action android:name="com.atid.app.atx.activity.BarcodeOptionActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.atid.app.atx.activity.SelectMask6cActivity"
+            android:label="@string/title_select_mask_6c"
+            android:screenOrientation="portrait" >
+            <intent-filter >
+                <action android:name="com.atid.app.atx.activity.SelectMaskActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

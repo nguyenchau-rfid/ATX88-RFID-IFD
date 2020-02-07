@@ -1,0 +1,353 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:2:1-106:12
+INJECTED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:2:1-106:12
+INJECTED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:2:1-106:12
+INJECTED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:2:1-106:12
+MERGED from [com.google.android.gms:play-services-location:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\9de038b12334c501077a3d0408dfe56c\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\4c1de2eadc3fa72e1a8d4a88594478c4\AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\4bff89a9bb5dcf37c480a0ffad4f4b4f\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\29bf23c8d1d5bc90d012bf51fef0b4ae\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\1563178c667aeb5d1509dd8e33d621a7\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\c1fff818dc9daaf344d26a5147dd0aaf\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:design:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\a167c755085830eefcb5bd96f325fa01\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\33e2ed04cc14f1b87dd50413e714de09\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\019036b38a73648dc77bd53d13f8bf54\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\688e1d4bb802963410caac0ea682c183\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\b2af056866a71c76928636aad6a0c218\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\1138e8d19b96da50eecd770c15c5d472\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\a11262c75c23b8c1cd57c8721284fd54\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\75f808b3d83390ccccc58f06fcc26cee\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\84fefcddea99cdb20f489583fc5f71b9\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\9d5f99f133db151f3f7ee6c36e690002\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\faf161b0fc45c4fd11bc901876312789\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\4f4dff0a1fd03492b76299e261dd7329\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\fc582162fc90130bcd8741e6a10fac63\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\b4bc1cdc523e95f37a19e0ca2e105fe8\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\7c72cc11741db19e5f596ca1ae2c0cf5\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\ddcc7c30a01df221ba1b2cc029bbcb73\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\f5b2982702307f134b4b200f46bfdf06\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\c8d5e41faf35bae38557e537bd2fd6b1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\3f7e5cfa0431cef18fc06c071c69ddd0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\d10aaed0bb74b81ba9c33c43e2153bc7\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\9985565f6aaa9de2ea8f7d5b200a603e\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\87b25225f7b18c77b90e9e7aef34b901\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\f8554e4b30e13e7ad9a3cbb61b03b859\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\3dfb611db81ba7c1346df9caceff3a1a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\08ae2ed7f128dd28df67b000a5907809\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\ace25341177aab83343f1cc28ab6941c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\de69483a1162106ce5cb429e0c3389d3\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\d8ce449078386a78f1eff505e8d2be00\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\f5456cc9f60b44b86a53784785b5aa5c\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\36ffa5a5b21019bddfd38c9a8a58fb06\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\a91a0a757f8f495540d09f49e581569b\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\df621c8e5d4b5d8a51e65b35bb6596ee\AndroidManifest.xml:17:1-22:12
+INJECTED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:2:1-106:12
+INJECTED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:2:1-106:12
+INJECTED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:2:1-106:12
+	package
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:4:5-31
+		INJECTED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:6:5-43
+		INJECTED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:3:5-51
+	xmlns:android
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:2:11-69
+	tools:ignore
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:7:5-30
+	android:versionCode
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:5:5-37
+		INJECTED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.WAKE_LOCK
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:9:5-68
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:9:22-65
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:10:5-80
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:10:22-77
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:11:5-79
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:11:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:12:5-81
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:12:22-78
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:13:5-74
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:13:22-71
+uses-permission#android.permission.BLUETOOTH
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:14:5-68
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:14:22-65
+uses-permission#android.permission.INTERNET
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:15:5-67
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:15:22-64
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:16:5-81
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:16:22-78
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:17:5-79
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:17:22-76
+uses-permission#android.permission.CHANGE_NETWORK_STATE
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:18:5-79
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:18:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:19:5-76
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:19:22-73
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:20:5-76
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:20:22-73
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:22:5-75
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:22:22-72
+uses-feature#android.hardware.bluetooth_le
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:31:5-33:35
+	android:required
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:33:9-32
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:32:9-53
+application
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:35:5-104:19
+MERGED from [com.google.android.gms:play-services-location:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\9de038b12334c501077a3d0408dfe56c\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\9de038b12334c501077a3d0408dfe56c\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\4c1de2eadc3fa72e1a8d4a88594478c4\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\4c1de2eadc3fa72e1a8d4a88594478c4\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\4bff89a9bb5dcf37c480a0ffad4f4b4f\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\4bff89a9bb5dcf37c480a0ffad4f4b4f\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\29bf23c8d1d5bc90d012bf51fef0b4ae\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\29bf23c8d1d5bc90d012bf51fef0b4ae\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\1563178c667aeb5d1509dd8e33d621a7\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\1563178c667aeb5d1509dd8e33d621a7\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:design:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\a167c755085830eefcb5bd96f325fa01\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\a167c755085830eefcb5bd96f325fa01\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\019036b38a73648dc77bd53d13f8bf54\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\019036b38a73648dc77bd53d13f8bf54\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\d10aaed0bb74b81ba9c33c43e2153bc7\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\d10aaed0bb74b81ba9c33c43e2153bc7\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\9985565f6aaa9de2ea8f7d5b200a603e\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\9985565f6aaa9de2ea8f7d5b200a603e\AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\d10aaed0bb74b81ba9c33c43e2153bc7\AndroidManifest.xml:22:18-91
+	android:label
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:40:9-41
+	android:allowClearUserData
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:37:9-42
+	android:hardwareAccelerated
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:38:9-43
+	tools:ignore
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:43:9-48
+	android:vmSafeMode
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:42:9-34
+	android:icon
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:39:9-45
+	android:allowBackup
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:36:9-35
+	android:theme
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:41:9-40
+activity#com.atid.app.atx.Main4Activity
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:44:9-60
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:44:19-48
+activity#com.atid.app.atx.Main2Activity
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:45:9-53:20
+	android:label
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:47:13-57
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:46:13-42
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:48:13-52:29
+action#android.intent.action.MAIN
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:49:17-69
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:49:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:51:17-77
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:51:27-74
+activity#com.atid.app.atx.activity.DeviceManageActivity
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:54:9-63:20
+	android:screenOrientation
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:57:13-49
+	android:label
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:56:13-45
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:55:13-58
+activity#com.atid.app.atx.activity.MainActivity
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:64:9-73:20
+	android:screenOrientation
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:67:13-49
+	android:label
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:66:13-45
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:65:13-50
+intent-filter#action:name:MainActivity+category:name:android.intent.category.DEFAULT
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:68:13-72:29
+action#MainActivity
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:69:17-55
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:69:25-52
+category#android.intent.category.DEFAULT
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:71:17-76
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:71:27-73
+activity#com.atid.app.atx.activity.RegistDeviceActivity
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:74:9-83:20
+	android:screenOrientation
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:77:13-49
+	android:label
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:76:13-59
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:75:13-58
+intent-filter#action:name:com.atid.app.atx.activity.RegistDeviceActivity+category:name:android.intent.category.DEFAULT
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:78:13-82:29
+action#com.atid.app.atx.activity.RegistDeviceActivity
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:79:17-89
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:79:25-86
+activity#com.atid.app.atx.activity.RfidOptionActivity
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:84:9-93:20
+	android:screenOrientation
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:87:13-49
+	android:label
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:86:13-54
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:85:13-56
+intent-filter#action:name:com.atid.app.atx.activity.RfidOptionActivity+category:name:android.intent.category.DEFAULT
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:88:13-92:29
+action#com.atid.app.atx.activity.RfidOptionActivity
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:89:17-87
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:89:25-84
+activity#com.atid.app.atx.activity.BarcodeOptionActivity
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:94:9-103:20
+	android:screenOrientation
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:97:13-49
+	android:label
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:96:13-57
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:95:13-59
+intent-filter#action:name:com.atid.app.atx.activity.BarcodeOptionActivity+category:name:android.intent.category.DEFAULT
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:98:13-102:29
+action#com.atid.app.atx.activity.BarcodeOptionActivity
+ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:99:17-90
+	android:name
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml:99:25-87
+uses-sdk
+INJECTED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml
+INJECTED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml
+MERGED from [com.google.android.gms:play-services-location:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\9de038b12334c501077a3d0408dfe56c\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\9de038b12334c501077a3d0408dfe56c\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\4c1de2eadc3fa72e1a8d4a88594478c4\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\4c1de2eadc3fa72e1a8d4a88594478c4\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\4bff89a9bb5dcf37c480a0ffad4f4b4f\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\4bff89a9bb5dcf37c480a0ffad4f4b4f\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\29bf23c8d1d5bc90d012bf51fef0b4ae\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\29bf23c8d1d5bc90d012bf51fef0b4ae\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\1563178c667aeb5d1509dd8e33d621a7\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\1563178c667aeb5d1509dd8e33d621a7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\c1fff818dc9daaf344d26a5147dd0aaf\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\c1fff818dc9daaf344d26a5147dd0aaf\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\a167c755085830eefcb5bd96f325fa01\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\a167c755085830eefcb5bd96f325fa01\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\33e2ed04cc14f1b87dd50413e714de09\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\33e2ed04cc14f1b87dd50413e714de09\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\019036b38a73648dc77bd53d13f8bf54\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\019036b38a73648dc77bd53d13f8bf54\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\688e1d4bb802963410caac0ea682c183\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\688e1d4bb802963410caac0ea682c183\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\b2af056866a71c76928636aad6a0c218\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\b2af056866a71c76928636aad6a0c218\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\1138e8d19b96da50eecd770c15c5d472\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\1138e8d19b96da50eecd770c15c5d472\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\a11262c75c23b8c1cd57c8721284fd54\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\a11262c75c23b8c1cd57c8721284fd54\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\75f808b3d83390ccccc58f06fcc26cee\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\75f808b3d83390ccccc58f06fcc26cee\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\84fefcddea99cdb20f489583fc5f71b9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\84fefcddea99cdb20f489583fc5f71b9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\9d5f99f133db151f3f7ee6c36e690002\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\9d5f99f133db151f3f7ee6c36e690002\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\faf161b0fc45c4fd11bc901876312789\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\faf161b0fc45c4fd11bc901876312789\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\4f4dff0a1fd03492b76299e261dd7329\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\4f4dff0a1fd03492b76299e261dd7329\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\fc582162fc90130bcd8741e6a10fac63\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\fc582162fc90130bcd8741e6a10fac63\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\b4bc1cdc523e95f37a19e0ca2e105fe8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\b4bc1cdc523e95f37a19e0ca2e105fe8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\7c72cc11741db19e5f596ca1ae2c0cf5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\7c72cc11741db19e5f596ca1ae2c0cf5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\ddcc7c30a01df221ba1b2cc029bbcb73\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\ddcc7c30a01df221ba1b2cc029bbcb73\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\f5b2982702307f134b4b200f46bfdf06\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\f5b2982702307f134b4b200f46bfdf06\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\c8d5e41faf35bae38557e537bd2fd6b1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\c8d5e41faf35bae38557e537bd2fd6b1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\3f7e5cfa0431cef18fc06c071c69ddd0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\3f7e5cfa0431cef18fc06c071c69ddd0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\d10aaed0bb74b81ba9c33c43e2153bc7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\d10aaed0bb74b81ba9c33c43e2153bc7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\9985565f6aaa9de2ea8f7d5b200a603e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\9985565f6aaa9de2ea8f7d5b200a603e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\87b25225f7b18c77b90e9e7aef34b901\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\87b25225f7b18c77b90e9e7aef34b901\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\f8554e4b30e13e7ad9a3cbb61b03b859\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\f8554e4b30e13e7ad9a3cbb61b03b859\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\3dfb611db81ba7c1346df9caceff3a1a\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\3dfb611db81ba7c1346df9caceff3a1a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\08ae2ed7f128dd28df67b000a5907809\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\08ae2ed7f128dd28df67b000a5907809\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\ace25341177aab83343f1cc28ab6941c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\ace25341177aab83343f1cc28ab6941c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\de69483a1162106ce5cb429e0c3389d3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\de69483a1162106ce5cb429e0c3389d3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\d8ce449078386a78f1eff505e8d2be00\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\d8ce449078386a78f1eff505e8d2be00\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\f5456cc9f60b44b86a53784785b5aa5c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\f5456cc9f60b44b86a53784785b5aa5c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\36ffa5a5b21019bddfd38c9a8a58fb06\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\36ffa5a5b21019bddfd38c9a8a58fb06\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\a91a0a757f8f495540d09f49e581569b\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\a91a0a757f8f495540d09f49e581569b\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\df621c8e5d4b5d8a51e65b35bb6596ee\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\df621c8e5d4b5d8a51e65b35bb6596ee\AndroidManifest.xml:20:5-44
+INJECTED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml
+INJECTED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml
+		ADDED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\ATX88-RFID\app\src\main\AndroidManifest.xml
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\4c1de2eadc3fa72e1a8d4a88594478c4\AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\4c1de2eadc3fa72e1a8d4a88594478c4\AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\4c1de2eadc3fa72e1a8d4a88594478c4\AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\4c1de2eadc3fa72e1a8d4a88594478c4\AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\1563178c667aeb5d1509dd8e33d621a7\AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\1563178c667aeb5d1509dd8e33d621a7\AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\NJOE\.gradle\caches\transforms-2\files-2.1\1563178c667aeb5d1509dd8e33d621a7\AndroidManifest.xml:24:13-58

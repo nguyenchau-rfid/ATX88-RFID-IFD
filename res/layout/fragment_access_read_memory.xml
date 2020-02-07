@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.atid.app.atx.activity.view.fragment.AccessReadMemory">
+    
+    <LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:background="@color/access_title_background_color"
+	    android:padding="2dp">
+    
+	<TextView 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="@string/access_result"
+	    android:textColor="@color/white"
+	    android:background="@color/access_title_background_color"/>
+
+	</LinearLayout>
+	
+	<LinearLayout android:id="@+id/layout_result"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:background="@color/grey"
+	    android:padding="5dp">
+	    
+	    <TextView android:id="@+id/result"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:text="@string/access_result"
+	        android:textSize="14sp"
+	        android:textColor="@color/aquamarine"/>
+	    
+	    <TextView android:id="@+id/data"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:text="@string/access_data_noti"
+	        android:textSize="14sp"
+	        android:textColor="@color/aquamarine"/>
+	    
+	    <LinearLayout
+	        style="@style/horizontal_layout">
+	            
+	    	    <TextView android:id="@+id/rssi"
+			        android:layout_width="0dp"
+			        android:layout_height="wrap_content"
+			        android:layout_weight="1"
+			        android:gravity="start"
+			        android:text="0"
+			        android:textSize="14sp"
+			        android:textColor="@color/aquamarine"
+			        tools:ignore="HardcodedText,UselessLeaf"/>
+
+	    	    <TextView android:id="@+id/phase"
+			        android:layout_width="0dp"
+			        android:layout_height="wrap_content"
+			        android:layout_weight="1"
+			        android:gravity="end"
+			        android:text="0"
+			        android:textSize="14sp"
+			        android:textColor="@color/aquamarine"
+			        tools:ignore="HardcodedText,UselessLeaf"/>
+	    	    	    	    	    	            
+
+	    </LinearLayout>
+	    
+	</LinearLayout>
+	
+	<View style="@style/vertical_split_5dp"/>
+	
+    <LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:background="@color/access_title_background_color"
+	    android:padding="2dp">
+		
+		<TextView 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:text="@string/access_read_data"
+		    android:textColor="@color/white"
+		    android:background="@color/access_title_background_color"/>
+	
+	</LinearLayout>
+	
+	<ListView android:id="@+id/value"
+	    style="@style/read_value_listview"
+	    android:background="@drawable/frame_rectangle"/>
+	
+	<View style="@style/vertical_split_5dp"/>
+	
+    <LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:background="@color/access_title_background_color"
+	    android:padding="2dp">
+		
+		<TextView 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:text="@string/access_param_setting"
+		    android:textColor="@color/white"
+		    android:background="@color/access_title_background_color"/>
+		
+	</LinearLayout>
+	
+	<ScrollView style="@style/param_scrollview" 
+	    android:background="@drawable/frame_rectangle">
+	
+	    <LinearLayout 
+	        style="@style/param_layout">
+	        
+	        <!-- Bank -->
+	        <LinearLayout style="@style/line_layout"
+	            tools:ignore="UselessParent">
+	            
+	            <TextView style="@style/option_caption_textview"
+	                android:text="@string/bank"/>
+	            
+	            <View style="@style/horizontal_split_5dp"/>
+	            
+	            <TextView android:id="@+id/bank" 
+	                style="@style/option_value_textview"
+	                android:layout_weight="1.5"
+	                tools:ignore="InefficientWeight"/>
+	        </LinearLayout>
+	        
+	        <!-- Offset -->
+			<LinearLayout style="@style/line_layout"
+			    tools:ignore="UselessParent">
+			    
+			    <TextView style="@style/option_caption_textview"
+			        android:text="@string/offset"/>
+			    
+			    <View style="@style/horizontal_split_5dp"/>
+			    
+			    <TextView android:id="@+id/offset"
+			        style="@style/option_value_textview"
+			        android:layout_weight="1.5"
+			        tools:ignore="InefficientWeight"/>
+			</LinearLayout>
+			
+	        <!-- Length -->
+			<LinearLayout style="@style/line_layout"
+			    tools:ignore="UselessParent">
+			    
+			    <TextView style="@style/option_caption_textview"
+			        android:text="@string/length"/>
+			    
+			    <View style="@style/horizontal_split_5dp"/>
+			    
+			    <TextView android:id="@+id/length"
+			        style="@style/option_value_textview"
+			        android:layout_weight="1.5"
+			        tools:ignore="InefficientWeight"/>
+			</LinearLayout>
+
+	        <!-- Password -->
+	        <LinearLayout style="@style/line_layout"
+	            tools:ignore="UselessParent">
+	            
+	            <TextView style="@style/option_caption_textview"
+	                android:text="@string/password"/>
+	            
+	            <View style="@style/horizontal_split_5dp"/>
+	            
+	            <TextView android:id="@+id/password"
+	                style="@style/option_value_textview"
+	                android:layout_weight="1.5"
+	                tools:ignore="InefficientWeight"/>
+	        </LinearLayout>
+			
+	    </LinearLayout>
+	</ScrollView>
+	
+
+</LinearLayout>

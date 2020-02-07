@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+    
+	<ScrollView 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    tools:ignore="UselessParent">
+	    
+	    <LinearLayout 
+			android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical">
+	        
+	        <!-- UPC-E0 Expand -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/upc_e0_expand"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/upc_e0_expand"/>
+	            
+	        </LinearLayout>
+	        	        
+	        <!-- UPC-E0 Addenda Required -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/upc_e0_addenda_required"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/upc_e0_addenda_required"/>
+	            
+	            	            
+	        </LinearLayout>	        
+	        
+	        <!-- UPC-E0 Addenda Separator -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/upc_e0_addenda_separator"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/upc_e0_addenda_separator"/>
+	            
+	            	            
+	        </LinearLayout>	        
+	        
+	        <!-- UPC-E0 Check Digit -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/upc_e0_check_digit"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/upc_e0_check_digit"/>
+	            	            
+	        </LinearLayout>	        
+	        
+	        <!-- UPC-E0 Leading Zero -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/upc_e0_leading_zero"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/upc_e0_leading_zero"/>
+	            	            
+	        </LinearLayout>	        
+	        
+	        <!-- UPC-E0 Addenda 2 Digit -->
+			<LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/upc_e0_addenda_2_digit"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/upc_e0_addenda_2_digit"/>
+	            	            
+	        </LinearLayout>
+	        
+	        <!-- UPC-E0 Addenda 5 Digit -->
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+	            
+	            <CheckBox android:id="@+id/upc_e0_addenda_5_digit"
+	                android:layout_width="wrap_content"
+	                style="@style/caption_textview"
+	                android:text="@string/upc_e0_addenda_5_digit"/>
+	            
+	            	            
+	        </LinearLayout>	        
+	    </LinearLayout>
+	    
+	</ScrollView>
+</LinearLayout>
