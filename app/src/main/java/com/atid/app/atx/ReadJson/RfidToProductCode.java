@@ -7,36 +7,22 @@ public class RfidToProductCode {
     @SerializedName("Shoes_IsLeftFoot")
     @Expose
     private Boolean Shoes_IsLeftFoot;
-
-    public Boolean getShoes_IsRightFoot() {
-        return Shoes_IsRightFoot;
-    }
-
-    public void setShoes_IsRightFoot(Boolean shoes_IsRightFoot) {
-        Shoes_IsRightFoot = shoes_IsRightFoot;
-    }
-
     private Boolean Shoes_IsRightFoot;
     @SerializedName("Shoes_PairedWithTagID")
     @Expose
     private Integer Shoes_PairedWithTagID;
-
     public void setRFIDTag(Integer RFIDTag) {
         this.RFIDTag = RFIDTag;
     }
-
     @SerializedName("RFIDTag")
     @Expose
     private Integer RFIDTag;
-
     @SerializedName("KiotVietProductID")
     @Expose
     private Integer KiotVietProductID;
-
     public Integer getRFIDTagCode() {
         return RFIDTag;
     }
-
     public Integer getProductcodeKiot() {
         return KiotVietProductID;
     }
@@ -57,4 +43,10 @@ public class RfidToProductCode {
         Shoes_PairedWithTagID = shoes_PairedWithTagID;
     }
 
+    public Boolean getShoes_IsRightFoot() {
+        return Shoes_IsRightFoot;
+    }
+    public void setShoes_IsRightFoot(Boolean shoes_IsRightFoot) {
+        Shoes_IsRightFoot = shoes_IsRightFoot;
+    }
 }

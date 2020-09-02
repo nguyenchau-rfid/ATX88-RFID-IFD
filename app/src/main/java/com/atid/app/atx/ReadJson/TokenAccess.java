@@ -12,6 +12,41 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class TokenAccess {
+    @SerializedName("message")
+    @Expose
+    private String message;
+    @SerializedName("didError")
+    @Expose
+    private Boolean didError;
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public Boolean getDidError() {
+        return didError;
+    }
+
+    public void setDidError(Boolean didError) {
+        this.didError = didError;
+    }
+
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
+
+    @SerializedName("errorMessage")
+    @Expose
+    private String errorMessage;
+
     @SerializedName("access_token")
     @Expose
     private String accessToken;

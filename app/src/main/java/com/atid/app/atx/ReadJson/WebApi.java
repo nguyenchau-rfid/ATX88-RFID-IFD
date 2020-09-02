@@ -2,38 +2,77 @@ package com.atid.app.atx.ReadJson;
 
 import java.util.List;
 
+import okhttp3.MediaType;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 
 public interface WebApi {
-    //lấy token
+    //lấy token IFD
     @POST("/connect/token")
     @FormUrlEncoded
-    Call<TokenAccess> oathToken(@Field("client_id") String clientId,
+    Call<TokenAccess> TokenIFD(@Field("client_id") String clientId,
                                 @Field("client_secret") String clientSecret,
                                 @Field("grant_type") String grant_type,
                                 @Field("scopes") String scopes
     );
-
+    //lấy token KiotViet
+    @POST("/connect/token")
+    @FormUrlEncoded
+    Call<TokenAccess> TokenKiotViet(@Field("client_id") String clientId,
+                                @Field("client_secret") String clientSecret,
+                                @Field("grant_type") String grant_type,
+                                @Field("scopes") String scopes
+    );
     @GET("/branches?pageSize=50")
     @Headers({"Content-Type: application/x-www-form-urlencoded"})
     Call<ListChiNhanh> getAllChiNhanh(@Header("Content-Type") String token,
                                       @Header("Retailer") String Retailer,
                                       @Header("Authorization") String Authorization);
 
-    // lay ra 1 user
-    @GET("/api/users/Gettbluser/")
-    @Headers({"Content-Type: application/x-www-form-urlencoded"})
-    Call<User> getAuser(@Query("Username") String username,
-                        @Query("pass") String pass);
+    //Dang nhap user
+    @GET("SysUsers")
+    @Headers("Content-Type: application/x-www-form-urlencoded")
+    Call<User> getAuser(@Query("loginName") String username,
+                        @Query("password") String pass,
+                        @Header("Authorization") String token);
+    //Lay RFIDTasks
+    @GET("RFIDTasks")
+    @Headers("Content-Type: application/x-www-form-urlencoded")
+    Call<RFIDTasksAdapter> getRFIDTasks(@Query("responsibleUserID") double UserID,
+                        @Header("Authorization") String token);
+
+    //POST The ve server
+    @FormUrlEncoded
+    @POST("RFIDTasks/ReadTag")
+    Call<ReadTagAdapter> PostReadTag(
+                                @Field("rfidTaskID") double Longitude,
+                                @Field("trackingGPS_Longitude") double Latitude,
+                                @Field("trackingGPS_Latitude") double TimeL,
+                                @Field("trackingGPS_Location") String Location,
+                                @Field("epc") String epc,
+                                @Header("Authorization") String token
+
+    );
+    //POST The ve server
+    @Headers({
+            "Content-type: application/json"
+    })
+    @POST("RFIDTasks/ReadTag")
+    Call<PostTag> PostReadTagTest(
+           @Body PostTag posttag,
+            @Header("Authorization") String token
+
+    );
     //thêm nhân viên
     @POST("/api/users/Posttbluser/")
     @FormUrlEncoded
@@ -44,7 +83,8 @@ public interface WebApi {
     );
     // chuyen doi tu RFID sang productcode
     @GET("/api/RFIDReferences/GetRFIDReference/")
-    @Headers({"Content-Type: application/x-www-form-urlencoded"})
+
+    @FormUrlEncoded
     Call<RfidToProductCode> getRFtoProduct(@Query("RFIDTag") String RFIDTag);
 
     // Tìm kiếm sản phẩm từ Productcode

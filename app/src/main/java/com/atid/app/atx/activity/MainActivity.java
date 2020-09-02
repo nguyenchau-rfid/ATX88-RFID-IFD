@@ -76,8 +76,9 @@ public class MainActivity extends Activity
 		getActionBar().setHomeButtonEnabled(true);
 
 		int position = getIntent().getIntExtra(Constants.SELECTED_READER, 0);
+
 		mReader = GlobalData.ReaderManager.get(position);
-		mReader.addListener(this);
+	mReader.addListener(this);
 		if (mReader.getRfidUhf() != null) {
 			mReader.getRfidUhf().addListener(this);
 		}
@@ -98,7 +99,7 @@ public class MainActivity extends Activity
 		try {
 			if(mReader.getBatteryState()<30)
 				Toast.makeText(getApplicationContext(), "Dung lượng pin của máy quét còn ít..vui lòng sạc thêm pin cho thiết bị...", Toast.LENGTH_LONG).show();
-			txtPin.setText(mReader.getBatteryState()+"%");
+		//	txtPin.setText(mReader.getBatteryState()+"%");
 		} catch (ATException e) {
 			e.printStackTrace();
 		}

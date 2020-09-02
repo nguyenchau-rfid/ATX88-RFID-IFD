@@ -3,74 +3,60 @@ package com.atid.app.atx.ReadJson;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+
 public class User {
 
-    @SerializedName("ID")
+
+    @SerializedName("message")
     @Expose
-    private Integer iD;
-    @SerializedName("IDLogin")
+    private String message;
+    @SerializedName("didError")
     @Expose
-    private Integer iDLogin;
-    @SerializedName("Usernam")
+    private Boolean didError;
+    @SerializedName("errorMessage")
     @Expose
-    private String usernam;
+    private String errorMessage;
 
-    @SerializedName("Name")
+    @SerializedName("model")
     @Expose
-    private String name;
-    @SerializedName("IsAdmin")
-    @Expose
-    private Boolean isAdmin;
-    @SerializedName("pass")
-    @Expose
-    private String pass;
+    private ModelUser ModelUser = null;
 
-    public Integer getID() {
-        return iD;
+    public ModelUser getModelUser() {
+        return ModelUser;
     }
 
-    public void setID(Integer iD) {
-        this.iD = iD;
+    public void setModelUser(ModelUser ModelUser) {
+        ModelUser = ModelUser;
     }
 
-    public Integer getIDLogin() {
-        return iDLogin;
+   // private ModelUser model;
+
+    public String getMessage() {
+        return message;
     }
 
-    public void setIDLogin(Integer iDLogin) {
-        this.iDLogin = iDLogin;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
-    public String getUsernam() {
-        return usernam;
+    public Boolean getDidError() {
+        return didError;
     }
 
-    public void setUsernam(String usernam) {
-        this.usernam = usernam;
+    public void setDidError(Boolean didError) {
+        this.didError = didError;
     }
 
-    public String getName() {
-        return name;
+    public Object getErrorMessage() {
+        return errorMessage;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
     }
 
-    public Boolean getIsAdmin() {
-        return isAdmin;
-    }
 
-    public void setIsAdmin(Boolean isAdmin) {
-        this.isAdmin = isAdmin;
-    }
 
-    public String getPass() {
-        return pass;
-    }
-
-    public void setPass(String pass) {
-        this.pass = pass;
-    }
 
 }

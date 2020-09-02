@@ -6,8 +6,8 @@ import java.util.Calendar;
 
 public class LocationAdapter     {
 
-    static float TrackingGPS_Longitude;
-    static float TrackingGPS_Latitude;
+    static double TrackingGPS_Longitude=0;
+    static double TrackingGPS_Latitude=0;
     static String TrackingGPS_Time;
     static String TrackingGPS_Location="";
     private SimpleDateFormat simpleday = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
@@ -24,19 +24,19 @@ public class LocationAdapter     {
 
     }
 
-    public  float getTrackingGPS_Longitude() {
+    public  double getTrackingGPS_Longitude() {
         return this.TrackingGPS_Longitude;
     }
 
-    public  void setTrackingGPS_Longitude(float trackingGPS_Longitude) {
+    public  void setTrackingGPS_Longitude(double trackingGPS_Longitude) {
         TrackingGPS_Longitude = trackingGPS_Longitude;
     }
 
-    public  float getTrackingGPS_Latitude() {
+    public  double getTrackingGPS_Latitude() {
         return this.TrackingGPS_Latitude;
     }
 
-    public  void setTrackingGPS_Latitude(float trackingGPS_Latitude) {
+    public  void setTrackingGPS_Latitude(double trackingGPS_Latitude) {
         TrackingGPS_Latitude = trackingGPS_Latitude;
     }
 

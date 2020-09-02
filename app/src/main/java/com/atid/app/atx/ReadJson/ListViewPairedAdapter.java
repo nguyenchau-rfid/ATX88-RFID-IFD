@@ -18,7 +18,6 @@ public class ListViewPairedAdapter  extends BaseAdapter {
     ArrayList<RfidToProductCode> RfidtoPrd;
 
     public ListViewPairedAdapter(Context c, ArrayList<RfidToProductCode> RfidtoPrd) {
-
         this.c = c;
         this.RfidtoPrd = RfidtoPrd;
 
@@ -27,6 +26,7 @@ public class ListViewPairedAdapter  extends BaseAdapter {
     public int getCount() {
         return RfidtoPrd.size();
     }
+
     @Override
     public RfidToProductCode getItem(int position) {
         return RfidtoPrd.get(position);

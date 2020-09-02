@@ -7,11 +7,11 @@ public class Location {
 
     @SerializedName("TrackingGPS_Longitude")
     @Expose
-    private float TrackingGPS_Longitude;
+    private double TrackingGPS_Longitude;
 
     @SerializedName("TrackingGPS_Latitude")
     @Expose
-    private float TrackingGPS_Latitude;
+    private double TrackingGPS_Latitude;
 
     @SerializedName("TrackingGPS_Time")
     @Expose
