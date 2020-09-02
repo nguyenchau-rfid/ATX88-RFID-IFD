@@ -1,0 +1,265 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.atid.app.atx"
+4    android:versionCode="2017110603"
+5    android:versionName="1.4.7.2017110603" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="26" />
+9-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.WAKE_LOCK" />
+11-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:9:5-68
+11-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:9:22-65
+12    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+12-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:10:5-80
+12-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:10:22-77
+13    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+13-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:11:5-79
+13-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:11:22-76
+14    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+14-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:12:5-81
+14-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:12:22-78
+15    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+15-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:13:5-74
+15-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:13:22-71
+16    <uses-permission android:name="android.permission.BLUETOOTH" />
+16-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:14:5-68
+16-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:14:22-65
+17    <uses-permission android:name="android.permission.INTERNET" />
+17-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:15:5-67
+17-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:15:22-64
+18    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+18-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:16:5-81
+18-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:16:22-78
+19    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+19-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:17:5-79
+19-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:17:22-76
+20    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+20-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:18:5-79
+20-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:18:22-76
+21    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+21-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:19:5-76
+21-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:19:22-73
+22    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+22-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:20:5-76
+22-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:20:22-73
+23    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+23-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:21:5-75
+23-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:21:22-72
+24    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+24-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:11:5-79
+24-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:11:22-76
+25    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+25-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:23:5-89
+25-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:23:22-86
+26    <uses-permission android:name="android.permission.INTERNET" />
+26-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:15:5-67
+26-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:15:22-64
+27    <!--
+28	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+29	<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+30	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+31	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+32    -->
+33    <uses-feature
+33-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:31:5-33:35
+34        android:name="android.hardware.bluetooth_le"
+34-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:32:9-53
+35        android:required="true" />
+35-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:33:9-32
+36
+37    <application
+37-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:35:5-131:19
+38        android:name="com.atid.app.atx.ReadJson.TokenManager"
+38-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:43:9-46
+39        android:allowBackup="true"
+39-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:36:9-35
+40        android:allowClearUserData="true"
+40-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:37:9-42
+41        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
+41-->[com.android.support:support-compat:28.0.0] C:\Users\nguye\.gradle\caches\transforms-2\files-2.1\00567bd0de14b33d1bf8a440dc72bff8\support-compat-28.0.0\AndroidManifest.xml:22:18-91
+42        android:debuggable="true"
+43        android:hardwareAccelerated="true"
+43-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:38:9-43
+44        android:icon="@drawable/ic_launcher"
+44-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:39:9-45
+45        android:label="@string/app_name"
+45-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:40:9-41
+46        android:testOnly="true"
+47        android:theme="@style/AppTheme"
+47-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:41:9-40
+48        android:vmSafeMode="true" >
+48-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:42:9-34
+49        <activity android:name="com.atid.app.atx.Main4Activity" >
+49-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:45:9-50:20
+49-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:46:13-42
+50            <intent-filter>
+50-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:47:13-49:29
+51                <category android:name="android.intent.category.DEFAULT" />
+51-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:48:17-76
+51-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:48:27-73
+52            </intent-filter>
+53        </activity>
+54        <activity
+54-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:51:9-58:20
+55            android:name="com.atid.app.atx.Main2Activity"
+55-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:52:13-42
+56            android:label="@string/title_activity_main2" >
+56-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:53:13-57
+57            <intent-filter>
+57-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:54:13-57:29
+58                <action android:name="android.intent.action.MAIN" />
+58-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:55:17-69
+58-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:55:25-66
+59
+60                <category android:name="android.intent.category.LAUNCHER" />
+60-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:56:17-77
+60-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:56:27-74
+61            </intent-filter>
+62        </activity>
+63
+64        <!-- <receiver android:name=".ReadJson.PollReceiver"> -->
+65        <!-- <intent-filter> -->
+66        <!-- <action android:name="android.intent.action.BOOT_COMPLETED" /> -->
+67        <!-- </intent-filter> -->
+68        <!-- </receiver> -->
+69        <!-- <service -->
+70        <!-- android:name=".ReadJson.MyService" -->
+71        <!-- android:enabled="true" -->
+72        <!-- android:exported="true" -->
+73        <!-- /> -->
+74        <!-- <service -->
+75        <!-- android:name=".ReadJson.MyService2" -->
+76        <!-- android:enabled="true" -->
+77        <!-- android:exported="true" -->
+78        <!-- /> -->
+79        <receiver android:name="com.atid.app.atx.ReadJson.PollReceiver" >
+79-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:75:9-80:20
+79-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:75:19-56
+80            <intent-filter>
+80-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:76:13-79:29
+81                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+81-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:77:17-78
+81-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:77:25-76
+82                <action android:name="android.net.wifi.STATE_CHANGE" />
+82-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:78:17-71
+82-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:78:25-69
+83            </intent-filter>
+84        </receiver>
+85
+86        <activity
+86-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:81:9-90:20
+87            android:name="com.atid.app.atx.activity.DeviceManageActivity"
+87-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:82:13-58
+88            android:label="@string/app_name"
+88-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:83:13-45
+89            android:screenOrientation="portrait" >
+89-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:84:13-49
+90            <intent-filter>
+90-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:85:13-89:29
+91                <action android:name="com.atid.app.atx.activity.DeviceManageActivity" />
+91-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:87:17-89
+91-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:87:25-86
+92
+93                <category android:name="android.intent.category.LAUNCHER" />
+93-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:56:17-77
+93-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:56:27-74
+94            </intent-filter>
+95        </activity>
+96        <activity
+96-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:91:9-100:20
+97            android:name="com.atid.app.atx.activity.MainActivity"
+97-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:92:13-50
+98            android:label="@string/app_name"
+98-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:93:13-45
+99            android:screenOrientation="portrait" >
+99-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:94:13-49
+100            <intent-filter>
+100-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:95:13-99:29
+101                <action android:name="MainActivity" />
+101-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:96:17-55
+101-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:96:25-52
+102
+103                <category android:name="android.intent.category.DEFAULT" />
+103-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:48:17-76
+103-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:48:27-73
+104            </intent-filter>
+105        </activity>
+106        <activity
+106-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:101:9-110:20
+107            android:name="com.atid.app.atx.activity.RegistDeviceActivity"
+107-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:102:13-58
+108            android:label="@string/app_regist_device_name"
+108-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:103:13-59
+109            android:screenOrientation="portrait" >
+109-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:104:13-49
+110            <intent-filter>
+110-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:105:13-109:29
+111                <action android:name="com.atid.app.atx.activity.RegistDeviceActivity" />
+111-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:106:17-89
+111-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:106:25-86
+112
+113                <category android:name="android.intent.category.DEFAULT" />
+113-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:48:17-76
+113-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:48:27-73
+114            </intent-filter>
+115        </activity>
+116        <activity
+116-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:111:9-120:20
+117            android:name="com.atid.app.atx.activity.RfidOptionActivity"
+117-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:112:13-56
+118            android:label="@string/title_rfid_option"
+118-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:113:13-54
+119            android:screenOrientation="portrait" >
+119-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:114:13-49
+120            <intent-filter>
+120-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:115:13-119:29
+121                <action android:name="com.atid.app.atx.activity.RfidOptionActivity" />
+121-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:116:17-87
+121-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:116:25-84
+122
+123                <category android:name="android.intent.category.DEFAULT" />
+123-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:48:17-76
+123-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:48:27-73
+124            </intent-filter>
+125        </activity>
+126        <activity
+126-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:121:9-130:20
+127            android:name="com.atid.app.atx.activity.BarcodeOptionActivity"
+127-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:122:13-59
+128            android:label="@string/title_barcode_option"
+128-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:123:13-57
+129            android:screenOrientation="portrait" >
+129-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:124:13-49
+130            <intent-filter>
+130-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:125:13-129:29
+131                <action android:name="com.atid.app.atx.activity.BarcodeOptionActivity" />
+131-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:126:17-90
+131-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:126:25-87
+132
+133                <category android:name="android.intent.category.DEFAULT" />
+133-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:48:17-76
+133-->E:\Android_Temp\ATX88-RFID\app\src\main\AndroidManifest.xml:48:27-73
+134            </intent-filter>
+135        </activity>
+136        <activity
+136-->[com.google.android.gms:play-services-base:15.0.1] C:\Users\nguye\.gradle\caches\transforms-2\files-2.1\bd90cdcaf86c06bed83f0d4f1ab2c0f3\play-services-base-15.0.1\AndroidManifest.xml:23:9-26:75
+137            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+137-->[com.google.android.gms:play-services-base:15.0.1] C:\Users\nguye\.gradle\caches\transforms-2\files-2.1\bd90cdcaf86c06bed83f0d4f1ab2c0f3\play-services-base-15.0.1\AndroidManifest.xml:24:13-79
+138            android:exported="false"
+138-->[com.google.android.gms:play-services-base:15.0.1] C:\Users\nguye\.gradle\caches\transforms-2\files-2.1\bd90cdcaf86c06bed83f0d4f1ab2c0f3\play-services-base-15.0.1\AndroidManifest.xml:25:13-37
+139            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+139-->[com.google.android.gms:play-services-base:15.0.1] C:\Users\nguye\.gradle\caches\transforms-2\files-2.1\bd90cdcaf86c06bed83f0d4f1ab2c0f3\play-services-base-15.0.1\AndroidManifest.xml:26:13-72
+140
+141        <meta-data
+141-->[com.google.android.gms:play-services-basement:15.0.1] C:\Users\nguye\.gradle\caches\transforms-2\files-2.1\24b07b82870695023f1bd411d3267fbf\play-services-basement-15.0.1\AndroidManifest.xml:23:9-25:69
+142            android:name="com.google.android.gms.version"
+142-->[com.google.android.gms:play-services-basement:15.0.1] C:\Users\nguye\.gradle\caches\transforms-2\files-2.1\24b07b82870695023f1bd411d3267fbf\play-services-basement-15.0.1\AndroidManifest.xml:24:13-58
+143            android:value="@integer/google_play_services_version" />
+143-->[com.google.android.gms:play-services-basement:15.0.1] C:\Users\nguye\.gradle\caches\transforms-2\files-2.1\24b07b82870695023f1bd411d3267fbf\play-services-basement-15.0.1\AndroidManifest.xml:25:13-66
+144    </application>
+145
+146</manifest>

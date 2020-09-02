@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.atid.app.atx",
+  "variantName": "debug",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "properties": [],
+      "versionCode": 2017110603,
+      "versionName": "1.4.7.2017110603",
+      "enabled": true,
+      "outputFile": "app-debug.apk"
+    }
+  ]
+}
