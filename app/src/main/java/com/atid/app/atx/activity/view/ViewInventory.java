@@ -37,8 +37,12 @@ import com.atid.app.atx.ReadJson.ChitietSP_Inventories;
 import com.atid.app.atx.ReadJson.ListViewAdapter;
 import com.atid.app.atx.ReadJson.ListViewPairedAdapter;
 import com.atid.app.atx.ReadJson.LoginAdapter;
+import com.atid.app.atx.ReadJson.ModelRFIDTagReference;
+import com.atid.app.atx.ReadJson.PostTag;
+import com.atid.app.atx.ReadJson.RFIDTagReference;
 import com.atid.app.atx.ReadJson.RfidToProductCode;
 import com.atid.app.atx.ReadJson.TokenAccess;
+import com.atid.app.atx.ReadJson.TokenManager;
 import com.atid.app.atx.ReadJson.WebApi;
 import com.atid.app.atx.activity.MainActivity;
 import com.atid.app.atx.adapter.DataListAdapter;
@@ -71,6 +75,7 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -111,12 +116,13 @@ public class ViewInventory extends BaseView implements OnClickListener, OnChecke
     ListViewAdapter customListAdapter;
     ListViewPairedAdapter customListPairedAdapter;
     ArrayList<ChiTietSP> inventoriesSP_Array = new ArrayList<>();
-    ArrayList<RfidToProductCode> RfidToProductCode_Array = new ArrayList<>();
-    ArrayList<RfidToProductCode> RfidPaired_Array = new ArrayList<>();
-    ArrayList<RfidToProductCode> Rfid_Not_Paired_Array = new ArrayList<>();
+    ArrayList<ModelRFIDTagReference> RfidToProductCode_Array = new ArrayList<>();
+    ArrayList<ModelRFIDTagReference> RfidPaired_Array = new ArrayList<>();
+    ArrayList<ModelRFIDTagReference> Rfid_Not_Paired_Array = new ArrayList<>();
     CheckBox chkFRID, chkRFIDTag;
-    String tempdatacode = "";
-    TokenAccess ngayToken = new TokenAccess();
+    Double tempdatacode;
+    String productCode;
+    TokenManager ngayToken = new TokenManager();
     String keyDay_IFD = "Ngay_IFD";
     String keyDay_Kiot = "Ngay_Kiot";
     String keyToken_IFD = "keytoken_IFD";
@@ -124,7 +130,7 @@ public class ViewInventory extends BaseView implements OnClickListener, OnChecke
     TextView txtSLRFID_KIOT;
     TextView txtSanPham;
     boolean timsp = false;
-    long masp_tim;
+    int masp_tim;
     boolean SetchkFRID = false;
     private RadioGroup rdMethod;
     private RadioButton rdMethodRfid;
@@ -143,6 +149,7 @@ public class ViewInventory extends BaseView implements OnClickListener, OnChecke
     private Button btnAction;
     private Button btnClear;
     private Button btnSetting;
+    private Button btnUpload;
     private DataListAdapter adpData;
     private KeyListAdapter adpTrigger;
     private volatile boolean mIsContinuousMode;
@@ -156,7 +163,7 @@ public class ViewInventory extends BaseView implements OnClickListener, OnChecke
     private int mBarcodeRestartTime;
     private volatile boolean mIsBarcodeRestart;
     private Handler mHandler;
-    private WebApi mAPIServiceIFD, mAPIServiceKiot;
+    private WebApi mAPIServiceIFD, mAPIServiceKiot, mAPIService_PostReadTag;
     private String m_Text = "";
     private SoundPool soundPool;
     // private AudioManager audioManager;
@@ -291,6 +298,19 @@ public class ViewInventory extends BaseView implements OnClickListener, OnChecke
                 if (mMethod == METHOD_RFID || mMethod == METHOD_BARCODE)
 
                     break;
+            case R.id.btnUpload:
+//                if (mMethod == METHOD_RFID)
+//                    Toast.makeText(getActivity(), "Upload data to server "
+//                            + loginadapter.getmaUserID() + "\n"
+//                            + loginadapter.getLongitude() + "--" + loginadapter.getLatitude() + "\n"
+//                            + loginadapter.getLocalAddress(), Toast.LENGTH_LONG).show();
+                for(int i=0;i<adpData.getCount();i++)
+                {
+                    Log.d("testCheck","Tag "+ adpData.getData(i));
+                    PostReadTag(adpData.getData(i));
+                }
+
+                break;
         }
     }
 
@@ -399,7 +419,6 @@ public class ViewInventory extends BaseView implements OnClickListener, OnChecke
 
     private void clear() {
 
-
         txtKeyType.setText("");
         txtKeyState.setText("");
         mTotalCount = 0;
@@ -429,7 +448,7 @@ public class ViewInventory extends BaseView implements OnClickListener, OnChecke
             PairedWithTagID = false;
             chkRFIDTag.setVisibility(View.GONE);
             chkFRID.setVisibility(View.VISIBLE);
-            
+
         }
         if (mIsRfidTagSpeed) {
             mRfidTagCount = 0;
@@ -492,23 +511,21 @@ public class ViewInventory extends BaseView implements OnClickListener, OnChecke
             return;
         }
         if (action == ActionState.Stop) {
-
             inventoriesSP_Array.clear();
             RfidToProductCode_Array.clear();
-
             if (chkFRID.isChecked() && SetchkFRID == true) {
                 lstData.setAdapter(adpData);
                 txtSanPham.setText("Chế độ xem mã RFID");
                 txtSLRFID_KIOT.setVisibility(View.INVISIBLE);
                 //Log.d("testCheck", SetchkFRID + " if****" +  chkFRID.isChecked() + "--");
-
             } else {
                 txtSanPham.setText("Sản Phẩm");
                 txtSLRFID_KIOT.setVisibility(View.VISIBLE);
                 //txtSLRFID_KIOT.setText("RFID   | KiotViet");
-                ConvertRFtoProductcode();
+                //convertRFtoCode("4966640000000000000000AA");
+                  ConvertRFtoProductcode();
             }
-            Log.d("testCheck", SetchkFRID + " --else--" + chkFRID.isChecked() + "--");
+            Log.d("testCheck", SetchkFRID + " --else--" + chkFRID.isChecked() + "--" + loginadapter.getmaUserID());
             txtCount.setText(String.format(Locale.US, "%d", adpData.getCount()));
             txtTotalCount.setText(String.format(Locale.US, "%d", mTotalCount));
 
@@ -553,8 +570,9 @@ public class ViewInventory extends BaseView implements OnClickListener, OnChecke
         double interval = 0.0;
         double tagSpeed = 0.0;
 // if (params != null  && tag.equals(masp_tim))
-        tempRFID = hex2Decimal(tag);
-        String strLong = Long.toString(tempRFID);
+      //  tempRFID = hex2Decimal(tag);
+    //    String strLong = Long.toString(tempRFID);
+    //    Log.d("CheckRFID", "the RFID : " + tempRFID + " chieudai: " + tag +"**"+strLong);
         // code chay on
 //        if (params != null) {
 //            TagExtParam param = (TagExtParam) params;
@@ -563,20 +581,20 @@ public class ViewInventory extends BaseView implements OnClickListener, OnChecke
 //        }
 //        adpData.add(strLong, "", rssi, phase);
 
-
         if (params != null) {
             TagExtParam param = (TagExtParam) params;
             rssi = param.getRssi();
             phase = param.getPhase();
         }
-        if (tempRFID == masp_tim && timsp == true) {
-            Log.d("tempRFID", "the RFID : " + timsp + " --- " + rssi + "-- " + tempcodepproduct + "**" + rssi);
-            adpData.updateRssi(strLong, "", rssi, phase);
-            setVolume(Math.abs(rssi));
-        } else if (timsp == false) {
-            Log.d("kotimsp", "the RFID : " + rssi + " -- " + phase);
-            adpData.add(strLong, "", rssi, phase);
-        }
+//        if (tag == masp_tim && timsp == true) {
+//            Log.d("tempRFID", "the RFID : " + timsp + " --- " + rssi + "-- " + tempcodepproduct + "**" + rssi);
+//            adpData.updateRssi(tag, "", rssi, phase);
+//            setVolume(Math.abs(rssi));
+//        } else if (timsp == false) {
+//            Log.d("kotimsp", "the RFID : " + rssi + " -- " + phase);
+//            adpData.add(tag, "", rssi, phase);
+//        }
+        adpData.add(tag, "", rssi, phase);
         mTotalCount++;
 
         txtCount.setText(String.format(Locale.US, "%d", adpData.getCount()));
@@ -598,7 +616,10 @@ public class ViewInventory extends BaseView implements OnClickListener, OnChecke
         } else
             ATLog.i(TAG, INFO, "EVENT. onReaderReadTag([%s], [%s], [%.2f, %.2f])", reader, tag, rssi, phase);
     }
+    public void CovertProductID2EPC()
+    {
 
+    }
     public static long hex2Decimal(String a) {
         String s = a.substring(4);
         String digits = "0123456789ABCDEF";
@@ -614,7 +635,6 @@ public class ViewInventory extends BaseView implements OnClickListener, OnChecke
             position++;
         }
         return val;
-
     }
 
     public void PlaySound() {
@@ -786,6 +806,9 @@ public class ViewInventory extends BaseView implements OnClickListener, OnChecke
 
         btnSetting = (Button) mView.findViewById(R.id.setting);
         btnSetting.setOnClickListener(this);
+        btnUpload = (Button) mView.findViewById(R.id.btnUpload);
+        btnUpload.setOnClickListener(this);
+
         registerForContextMenu(lstData);
         txtSanPham = (TextView) mView.findViewById(R.id.txtSanPham);
         txtSLRFID_KIOT = (TextView) mView.findViewById(R.id.txtSLRFID_KIOT);
@@ -822,8 +845,8 @@ public class ViewInventory extends BaseView implements OnClickListener, OnChecke
                     // Collections.sort(  Rfid_Not_Paired_Array.);
                     Log.d("Rfid_Not_Paired_Array", Rfid_Not_Paired_Array.size() + "--");
                     for (int i = 0; i < Rfid_Not_Paired_Array.size(); i++) {
-                        Log.d("Rfid_Not_Paired_Array", i + "(-)" + Rfid_Not_Paired_Array.get(i).getRFIDTagCode() + "--" + Rfid_Not_Paired_Array.get(i).getShoes_IsLeftFoot() + "--");
-                        if (getIndexOf(Rfid_Not_Paired_Array.get(i).getRFIDTagCode()) == 1) {
+                        Log.d("Rfid_Not_Paired_Array", i + "(-)" + Rfid_Not_Paired_Array.get(i).getRfidTagID() + "--" + Rfid_Not_Paired_Array.get(i).getShoesIsLeftFoot() + "--");
+                        if (getIndexOf(Rfid_Not_Paired_Array.get(i).getRfidTagID()) == 1) {
                             Rfid_Not_Paired_Array.remove(i);
                             i--;
                         }
@@ -831,6 +854,7 @@ public class ViewInventory extends BaseView implements OnClickListener, OnChecke
                     customListPairedAdapter.notifyDataSetChanged();
                     customListPairedAdapter = new ListViewPairedAdapter(getActivity(), (Rfid_Not_Paired_Array));
                     lstData.setAdapter(customListPairedAdapter);
+
                 } else {
                     PairedWithTagID = true;
                     Toast.makeText(getActivity(), "chkRFIDTag--HIển thị lại các đôi giày", Toast.LENGTH_SHORT).show();
@@ -839,18 +863,14 @@ public class ViewInventory extends BaseView implements OnClickListener, OnChecke
                     customListPairedAdapter.notifyDataSetChanged();
                     customListPairedAdapter = new ListViewPairedAdapter(getActivity(), RfidPaired_Array);
                     lstData.setAdapter(customListPairedAdapter);
-
                 }
-
                 break;
-
         }
     }
-
-    private int getIndexOf(Integer s) {
+    private int getIndexOf(Double s) {
         for (int i = 0; i < RfidPaired_Array.size(); i++) {
-            Log.d("Rfid_Not_Paired_Array", RfidPaired_Array.size() + "**" + RfidPaired_Array.get(i).getShoes_PairedWithTagID() + "--");
-            if (RfidPaired_Array.get(i).getShoes_PairedWithTagID().equals(s)) {
+            Log.d("Rfid_Not_Paired_Array", RfidPaired_Array.size() + "**" + RfidPaired_Array.get(i).getShoesPairedWithTagID() + "--");
+            if (RfidPaired_Array.get(i).getShoesPairedWithTagID().equals(s)) {
                 return 1; //i là vị trí của s
             }
         }
@@ -882,7 +902,7 @@ public class ViewInventory extends BaseView implements OnClickListener, OnChecke
         btnAction.setEnabled(enabled);
         btnClear.setEnabled(mIsEnabled);
         btnSetting.setEnabled(mIsEnabled);
-
+        btnUpload.setEnabled(enabled);
         ATLog.i(TAG, INFO, "INFO. enableWidgets(%s)", enabled);
     }
 
@@ -1001,7 +1021,6 @@ public class ViewInventory extends BaseView implements OnClickListener, OnChecke
     // Loaded Reader Properteis
     @Override
     protected void loadedProperties(boolean isInitialize) {
-
         if (isInitialize) {
             switch (mMethod) {
                 case METHOD_RFID:
@@ -1051,12 +1070,12 @@ public class ViewInventory extends BaseView implements OnClickListener, OnChecke
         }
 
         // kiểm tra chkFRID.isCheck
-        Log.d("sendGetANV", "vao day");
+
         if (chkFRID.isChecked()) {
-            Log.d("sendGetANV", "vao day1");
+
             adpData.setReportRssi(true);
         } else {
-            Log.d("sendGetANV", "vao day2");
+
             adpData.setReportRssi(false);
         }
         switch (type) {
@@ -1107,39 +1126,99 @@ public class ViewInventory extends BaseView implements OnClickListener, OnChecke
     public void ConvertRFtoProductcode() {
         int tempdata = adpData.getCount();
         inventoriesSP_Array = new ArrayList<>();
-        for (int i = 0; i < tempdata; i++) {
-            Log.d("sendGetANV", adpData.getData(i));
-            convertRFtoCode(adpData.getData(i));
-        }
+            for (int i = 0; i < tempdata; i++) {
+                Log.d("sendGetANV", adpData.getData(i));
+                convertRFtoCode(adpData.getData(i));
+                //  convertRFtoCode("4966640000000000000000AA");
+            }
 
     }
 
+    public void PostReadTag(String epc) {
+        PostTag post = new PostTag();
+        post.setRfidTaskID(loginadapter.getmaUserID());
+        post.setTrackingGPS_Longitude(loginadapter.getLongitude());
+        post.setTrackingGPS_Latitude(loginadapter.getLatitude());
+        post.setTrackingGPS_Location(loginadapter.getLocalAddress());
+        post.setEpc(epc);
+        Log.d("checkRFID", "CheckRFID " + epc );
+        //mAPIService_PostReadTag = ApiUnit.getServiceIFD();
+        mAPIServiceIFD.PostReadTagTest(post, ngayToken.Laytoken(getActivity(), keyToken_IFD)).enqueue(new retrofit2.Callback<PostTag>() {
+            @Override
+            public void onResponse(Call<PostTag> call, Response<PostTag> response) {
+                if (response.isSuccessful()) {
+                    Log.d("checkRFID", "CheckRFID " + response.body().getMessage() );
+                    Toast.makeText(getActivity(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                } else {
+                    JSONObject object = null;
+                    String messageString = "";
+                    try {
+                        object = new JSONObject(response.errorBody().string());
+                        messageString = object.getString("message") + object.getString("errorMessage")  ;
+                        Log.d("checkRFID", "CheckRFID " + messageString );
+                    } catch (JSONException | IOException e) {
+                        e.printStackTrace();
+                    }
+                    switch (response.code()) {
+                        case 401:
+                            Toast.makeText(getActivity(), "Loi 401" + messageString, Toast.LENGTH_SHORT).show();
+                            break;
+                        case 404:
+                            Toast.makeText(getActivity(), "Loi 404" + messageString, Toast.LENGTH_SHORT).show();
+                            break;
+                        case 500:
+                            Toast.makeText(getActivity(), "Loi 500" + messageString, Toast.LENGTH_SHORT).show();
+                            break;
+                        default:
+                            Toast.makeText(getActivity(), "unknown error " + messageString, Toast.LENGTH_SHORT).show();
+                            break;
+                    }
+                }
+
+                call.cancel();
+            }
+
+            @Override
+            public void onFailure(Call<PostTag> call, Throwable t) {
+                Log.e("postLocation", "Dangnhap " + t.toString());
+                call.cancel();
+            }
+        });
+    }
     // ------------------------------------------------------------------------
     // Declare Interface ISetWriteMemoryListener
     // ------------------------------------------------------------------------
+    public void CheckTaskID()
+    {
 
+    }
     ////////////////////  Đọc dữ liệu từ thẻ rfid kiểm tra json
     public void convertRFtoCode(final String tag) {
-        mAPIServiceIFD.getRFtoProduct(tag).enqueue(new retrofit2.Callback<RfidToProductCode>() {
+        mAPIServiceIFD.getRFtoProduct(tag, ngayToken.Laytoken(getActivity(), keyToken_IFD)).enqueue(new retrofit2.Callback<RFIDTagReference>() {
             @Override
-            public void onResponse(Call<RfidToProductCode> call, Response<RfidToProductCode> response) {
+            public void onResponse(Call<RFIDTagReference> call, Response<RFIDTagReference> response) {
                 if (response.isSuccessful()) {
-                    tempdatacode = response.body().getProductcodeKiot().toString();
-                    boolean shoseleft = response.body().getShoes_IsLeftFoot();
-                    Integer PairedWithTag = response.body().getShoes_PairedWithTagID();
-                    Integer TagRFID = response.body().getRFIDTagCode();
-                  //  Log.d("sendGetANV", TagRFID + "-----" + PairedWithTag);
-                    if (PairedWithTagID == true) {
-                        RfidToProductCode ArrayRFID = new RfidToProductCode();
-                        ArrayRFID.setKiotVietProductID(Integer.parseInt(tempdatacode));
-                        ArrayRFID.setShoes_IsLeftFoot(shoseleft);
-                        ArrayRFID.setShoes_PairedWithTagID(PairedWithTag);
-                        ArrayRFID.setRFIDTag(TagRFID);
+
+                    productCode = response.body().getModel().getProductCode();
+                    tempdatacode = response.body().getModel().getKiotVietProductID();
+                    boolean shoseleft = response.body().getModel().getShoesIsLeftFoot();
+                    boolean  isPairedProduct = response.body().getModel().getIsPairedProduct();
+                    Log.d("getShoesIsLeftFoot", response.body().getModel().getShoesIsLeftFoot() + "-----" + tempdatacode);
+                    Double PairedWithTag = response.body().getModel().getShoesPairedWithTagID();
+                    Double TagRFID = response.body().getModel().getRfidTagID();
+
+                    if (PairedWithTagID == true && isPairedProduct==true ) {
+
+                        ModelRFIDTagReference ArrayRFID = new ModelRFIDTagReference();
+                        ArrayRFID.setKiotVietProductID(tempdatacode);
+                        ArrayRFID.setShoesIsLeftFoot(shoseleft);
+                        ArrayRFID.setShoesPairedWithTagID(PairedWithTag);
+                        ArrayRFID.setRfidTagID(TagRFID);
                         RfidToProductCode_Array.add(ArrayRFID);
                         for (int i = 0; i < RfidToProductCode_Array.size(); i++) {
                             for (int j = i + 1; j < RfidToProductCode_Array.size(); j++) {
-                                if (RfidToProductCode_Array.get(i).getRFIDTagCode() == RfidToProductCode_Array.get(j).getShoes_PairedWithTagID()) {
-                                    ArrayRFID.setShoes_IsRightFoot(RfidToProductCode_Array.get(i).getShoes_IsLeftFoot());
+                                if (RfidToProductCode_Array.get(i).getRfidTagID() == RfidToProductCode_Array.get(j).getShoesPairedWithTagID()) {
+                                    ArrayRFID.setShoes_IsRightFoot(!RfidToProductCode_Array.get(i).getShoesIsLeftFoot());
                                     RfidPaired_Array.add(ArrayRFID);
                                     // go bo cac san pham dong doi
                                     RfidToProductCode_Array.remove(j);
@@ -1149,12 +1228,12 @@ public class ViewInventory extends BaseView implements OnClickListener, OnChecke
                         }
                         customListPairedAdapter = new ListViewPairedAdapter(getActivity(), RfidPaired_Array);
                         lstData.setAdapter(customListPairedAdapter);
-                       // call.cancel();
+                        call.cancel();
                     } else {
-                        Log.d("laymakiot", tempdatacode);
+                        Log.d("laymakiot", tempdatacode.toString());
                         ChiTietSP invSP = new ChiTietSP();
-                        invSP.setId(Integer.parseInt(tempdatacode));
-                        invSP.setCodeRFID(tag);
+                        invSP.setId(tempdatacode);
+                        invSP.setCodeRFID(productCode);
                         invSP.setDemsoluong(1);
                         inventoriesSP_Array.add(invSP);
                         for (int i = 0; i < inventoriesSP_Array.size(); i++) {
@@ -1168,14 +1247,40 @@ public class ViewInventory extends BaseView implements OnClickListener, OnChecke
                         }
                         customListAdapter = new ListViewAdapter(getActivity(), inventoriesSP_Array);
                         lstData.setAdapter(customListAdapter);
-                        call.cancel();
+
                     }
 
+                } else {
+                    JSONObject object = null;
+                    String messageString = "";
+                    try {
+                        object = new JSONObject(response.errorBody().string());
+                        System.out.println(object.getString("message"));
+                        messageString = object.getString("message");
+
+                    } catch (JSONException | IOException e) {
+                        e.printStackTrace();
+                    }
+                    switch (response.code()) {
+                        case 401:
+                            Toast.makeText(getActivity(), "Loi 401" + messageString, Toast.LENGTH_SHORT).show();
+                            break;
+                        case 404:
+                            Toast.makeText(getActivity(), "Loi 404" + messageString, Toast.LENGTH_SHORT).show();
+                            break;
+                        case 500:
+                            Toast.makeText(getActivity(), "Loi 500" + messageString, Toast.LENGTH_SHORT).show();
+                            break;
+                        default:
+                            Toast.makeText(getActivity(), "unknown error " + messageString, Toast.LENGTH_SHORT).show();
+                            break;
+                    }
                 }
+                call.cancel();
             }
 
             @Override
-            public void onFailure(retrofit2.Call<RfidToProductCode> call, Throwable t) {
+            public void onFailure(retrofit2.Call<RFIDTagReference> call, Throwable t) {
                 call.cancel();
                 //  Log.d("sendGetANV", t.toString());
                 Toast.makeText(getActivity(), "Lỗi convertRFtoCode " + t, Toast.LENGTH_LONG).show();
@@ -1184,9 +1289,7 @@ public class ViewInventory extends BaseView implements OnClickListener, OnChecke
     }
 
     @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo
-            menuInfo) {
-
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         if (v.getId() == R.id.data_list) {
             menu.setHeaderTitle("Tùy Chọn ");
             menu.setHeaderIcon(R.drawable.read_memory_able);
@@ -1202,7 +1305,6 @@ public class ViewInventory extends BaseView implements OnClickListener, OnChecke
             ShareViaEmail();
         } else if (item.getTitle().equals("Tồn KiotViet"))  //&& chkFRID.isChecked()
         {
-
             for (int i = 0; i < inventoriesSP_Array.size(); i++) {
                 Log.d("KiotViet", inventoriesSP_Array.get(i).getId() + "**" + inventoriesSP_Array.get(i).getDemsoluong() + "");
                 LaySP(inventoriesSP_Array.get(i).getId(), i);
@@ -1267,6 +1369,7 @@ public class ViewInventory extends BaseView implements OnClickListener, OnChecke
                             Toast.makeText(getActivity(), "Không tìm thấy thông tin sản phẩm " + masp_tim, Toast.LENGTH_LONG).show();
                         }
                     }
+
                     @Override
                     public void onFailure(retrofit2.Call<RfidToProductCode> call, Throwable t) {
                         call.cancel();
@@ -1286,7 +1389,7 @@ public class ViewInventory extends BaseView implements OnClickListener, OnChecke
 
     }
 
-    public void LaySP(final Integer Productid, final int vitri) {
+    public void LaySP(final Double Productid, final int vitri) {
         Call<ChiTietSP> call4 = mAPIServiceKiot.getChitietSP(ngayToken.getContent(), ngayToken.getRetailer(), ngayToken.Laytoken(getActivity(), keyToken_Kiot), Productid);
         call4.enqueue(new retrofit2.Callback<ChiTietSP>() {
             @Override
@@ -1420,7 +1523,6 @@ public class ViewInventory extends BaseView implements OnClickListener, OnChecke
     public interface ISetWriteMemoryListener {
         void onSetWriteMemory(String data);
     }
-
     private class SetSelectMaskThread extends Thread {
 
         private String mData;

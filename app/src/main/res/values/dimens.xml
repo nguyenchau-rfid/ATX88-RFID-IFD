@@ -8,5 +8,5 @@
     <dimen name="inventory_option_height">120dp</dimen>
     <dimen name="message_height">52dp</dimen>
     <dimen name="read_value_height">60dp</dimen>
-    
+    <dimen name="loginViewsMargin">10dp</dimen>
 </resources>

@@ -908,6 +908,7 @@ dimen inventory_option_height
 dimen item_touch_helper_max_drag_scroll_per_frame
 dimen item_touch_helper_swipe_escape_max_velocity
 dimen item_touch_helper_swipe_escape_velocity
+dimen loginViewsMargin
 dimen main_menu_width
 dimen message_height
 dimen mtrl_bottomappbar_fabOffsetEndMode
@@ -1074,6 +1075,7 @@ drawable access_lock_memory_selector
 drawable aquamarine
 drawable avd_hide_password
 drawable avd_show_password
+drawable background_custom
 drawable barcode_disable_40
 drawable barcode_enable_40
 drawable battery0
@@ -1083,6 +1085,7 @@ drawable battery3
 drawable battery4
 drawable black
 drawable blue
+drawable btn_custom
 drawable btn_more_blue_normal
 drawable btn_more_blue_pressed
 drawable btn_more_blue_selector
@@ -1113,6 +1116,7 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable custom_edittext
 drawable cyan
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
@@ -1220,12 +1224,10 @@ drawable yellow
 id ALT
 id CTRL
 id FUNCTION
-id Find
 id FindPairedWithTagID
 id FindProduct
 id InvKiot
 id META
-id Quaylai
 id SHIFT
 id SYM
 id SendMail
@@ -1286,6 +1288,8 @@ id bottom
 id btnLogin
 id btnPost
 id btnThoat
+id btnUpload
+id btnwifiTurnOn
 id buttonPanel
 id cancel_action
 id center
@@ -1299,6 +1303,7 @@ id checkbox
 id chkRFID
 id chkRFIDTag
 id chronometer
+id cirLoginButton
 id clear
 id clip_horizontal
 id clip_vertical
@@ -1349,7 +1354,6 @@ id custom
 id customPanel
 id dark
 id data
-id data_findproduct
 id data_list
 id data_matrix_append
 id data_matrix_code_page
@@ -1544,6 +1548,7 @@ id listMode
 id list_item
 id list_mask
 id lock_select_type
+id lstViewTest
 id lvTask
 id mac_address
 id main_menu_fragement
@@ -1763,10 +1768,12 @@ id tvDate
 id tvDescription
 id tvDiachi
 id tvIdTask
+id tvStatusWifi
 id tvTest
+id txInput
+id txInputPass
 id txtSLRFID_KIOT
 id txtSanPham
-id txtTitle
 id txtclose
 id type
 id type_lock
@@ -1882,6 +1889,8 @@ layout activity_main4
 layout activity_regist_device
 layout activity_rfid_option
 layout activity_select_mask_6c
+layout custom_processbar
+layout customdialogwifi
 layout custompopup
 layout customshow
 layout design_bottom_navigation_item
@@ -2731,6 +2740,7 @@ style Base_Widget_MaterialComponents_TextInputLayout
 style CardView
 style CardView_Dark
 style CardView_Light
+style EditScreenTextInputLayoutStyle
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_MaterialComponents
@@ -3055,6 +3065,7 @@ style label_textview
 style line_layout
 style line_vertical_layout
 style list_split
+style loginButton
 style memory_address
 style memory_value
 style menu_caption_textview
@@ -3079,6 +3090,7 @@ style vertical_split_3dp
 style vertical_split_5dp
 style vertical_split_7dp
 style vertical_view
+style viewParent
 style wrap_view
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity

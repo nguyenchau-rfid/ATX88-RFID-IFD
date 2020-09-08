@@ -38,10 +38,19 @@ public class PostTag {
         this.epc = epc;
     }
 
-    private double rfidTaskID=0;
-        private double trackingGPS_Longitude=0;
-        private double trackingGPS_Latitude=0;
-        private String epc="";
+    private double rfidTaskID = 0;
+    private double trackingGPS_Longitude = 0;
+    private double trackingGPS_Latitude = 0;
+    private String epc = "";
+    private String TrackingGPS_Location;
+
+    public String getTrackingGPS_Location() {
+        return TrackingGPS_Location;
+    }
+
+    public void setTrackingGPS_Location(String trackingGPS_Location) {
+        TrackingGPS_Location = trackingGPS_Location;
+    }
 
 
     public String getMessage() {
@@ -91,14 +100,14 @@ public class PostTag {
 
     private ModelReadTagAdapter modelReadTag;
 
-        @Override
-        public String toString() {
-            return "Posts{" +
-                    "userId=" + rfidTaskID +
-                    ", id=" + trackingGPS_Longitude +
-                    ", title='" + trackingGPS_Latitude + '\'' +
-                    ", body='" + epc + '\'' +
-                    '}';
-        }
+    @Override
+    public String toString() {
+        return "Posts{" +
+                "userId=" + rfidTaskID +
+                ", id=" + trackingGPS_Longitude +
+                ", title='" + trackingGPS_Latitude + '\'' +
+                ", body='" + epc + '\'' +
+                '}';
+    }
 
 }

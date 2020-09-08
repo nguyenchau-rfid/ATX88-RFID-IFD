@@ -45,8 +45,8 @@ public class ListViewAdapter extends BaseAdapter {
 
     }
 
-    public Integer getMaSP(int i) {
-        Integer Masp = this.inv_SP.get(i).getId();
+    public Double getMaSP(int i) {
+        Double Masp = this.inv_SP.get(i).getId();
         return Masp;
     }
 

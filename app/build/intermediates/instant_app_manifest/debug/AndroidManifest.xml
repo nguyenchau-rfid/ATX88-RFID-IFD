@@ -6,7 +6,7 @@
     android:versionName="1.4.7.2017110603" >
 
     <uses-sdk
-        android:minSdkVersion="19"
+        android:minSdkVersion="20"
         android:targetSdkVersion="26" />
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -47,11 +47,6 @@
         android:testOnly="true"
         android:theme="@style/AppTheme"
         android:vmSafeMode="true" >
-        <activity android:name="com.atid.app.atx.Main4Activity" >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
         <activity
             android:name="com.atid.app.atx.Main2Activity"
             android:label="@string/title_activity_main2" >
@@ -62,25 +57,11 @@
             </intent-filter>
         </activity>
 
-        <!-- <receiver android:name=".ReadJson.PollReceiver"> -->
-        <!-- <intent-filter> -->
-        <!-- <action android:name="android.intent.action.BOOT_COMPLETED" /> -->
-        <!-- </intent-filter> -->
-        <!-- </receiver> -->
-        <!-- <service -->
-        <!-- android:name=".ReadJson.MyService" -->
-        <!-- android:enabled="true" -->
-        <!-- android:exported="true" -->
-        <!-- /> -->
-        <!-- <service -->
-        <!-- android:name=".ReadJson.MyService2" -->
-        <!-- android:enabled="true" -->
-        <!-- android:exported="true" -->
-        <!-- /> -->
-        <receiver android:name="com.atid.app.atx.ReadJson.PollReceiver" >
+        <receiver android:name="com.atid.app.atx.ReadJson.WifiReceiver" >
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
                 <action android:name="android.net.wifi.STATE_CHANGE" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
             </intent-filter>
         </receiver>
 
@@ -131,6 +112,16 @@
             <intent-filter>
                 <action android:name="com.atid.app.atx.activity.BarcodeOptionActivity" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.atid.app.atx.Main4Activity" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.atid.app.atx.Main3Activity" >
+            <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

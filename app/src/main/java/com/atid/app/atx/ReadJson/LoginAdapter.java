@@ -9,6 +9,27 @@ public class LoginAdapter implements Parcelable {
     static double maUserID;
     static double Longitude;
     static double Latitude;
+    static String LocalAddress="";
+
+    public static int getVoucherType() {
+        return voucherType;
+    }
+
+    public static void setVoucherType(int voucherType) {
+        LoginAdapter.voucherType = voucherType;
+    }
+
+    static int voucherType;
+
+    public static String getLocalAddress() {
+        return LocalAddress;
+    }
+
+    public static void setLocalAddress(String localAddress) {
+        LocalAddress = localAddress;
+    }
+
+
 
     public static double getLongitude() {
         return Longitude;

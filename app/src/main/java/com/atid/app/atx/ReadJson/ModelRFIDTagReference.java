@@ -78,6 +78,24 @@ public class ModelRFIDTagReference {
     @Expose
     private Object salePriceNoVAT;
 
+    public Integer getDemsoluong() {
+        return demsoluong;
+    }
+
+    public void setDemsoluong(Integer demsoluong) {
+        this.demsoluong = demsoluong;
+    }
+
+    public Integer demsoluong=0;
+    public Boolean getShoes_IsRightFoot() {
+        return Shoes_IsRightFoot;
+    }
+
+    public void setShoes_IsRightFoot(Boolean shoes_IsRightFoot) {
+        Shoes_IsRightFoot = shoes_IsRightFoot;
+    }
+
+    private Boolean Shoes_IsRightFoot;
     public Double getRfidTagID() {
         return rfidTagID;
     }

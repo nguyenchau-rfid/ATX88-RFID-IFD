@@ -8,6 +8,10 @@
         "source": "E:\\Android_Temp\\ATX88-RFID\\app\\src\\main\\res\\drawable\\btn_more_blue_normal.png"
     },
     {
+        "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\drawable_custom_edittext.xml.flat",
+        "source": "E:\\Android_Temp\\ATX88-RFID\\app\\src\\main\\res\\drawable\\custom_edittext.xml"
+    },
+    {
         "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_barcode_option_ssi_1d_code128.xml.flat",
         "source": "E:\\Android_Temp\\ATX88-RFID\\app\\src\\main\\res\\layout\\dialog_barcode_option_ssi_1d_code128.xml"
     },
@@ -88,12 +92,12 @@
         "source": "E:\\Android_Temp\\ATX88-RFID\\app\\src\\main\\res\\drawable\\tab_background_selector.xml"
     },
     {
-        "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\drawable_btn_more_disabled.png.flat",
-        "source": "E:\\Android_Temp\\ATX88-RFID\\app\\src\\main\\res\\drawable\\btn_more_disabled.png"
-    },
-    {
         "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_barcode_option_ssi_2d_matrix2of5.xml.flat",
         "source": "E:\\Android_Temp\\ATX88-RFID\\app\\src\\main\\res\\layout\\dialog_barcode_option_ssi_2d_matrix2of5.xml"
+    },
+    {
+        "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\drawable_btn_more_disabled.png.flat",
+        "source": "E:\\Android_Temp\\ATX88-RFID\\app\\src\\main\\res\\drawable\\btn_more_disabled.png"
     },
     {
         "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\drawable_rdb_barcode_selector.xml.flat",
@@ -114,6 +118,10 @@
     {
         "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main4.xml.flat",
         "source": "E:\\Android_Temp\\ATX88-RFID\\app\\src\\main\\res\\layout\\activity_main4.xml"
+    },
+    {
+        "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\layout_custom_processbar.xml.flat",
+        "source": "E:\\Android_Temp\\ATX88-RFID\\app\\src\\main\\res\\layout\\custom_processbar.xml"
     },
     {
         "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_barcode_option_ssi_2d_code39.xml.flat",
@@ -160,20 +168,20 @@
         "source": "E:\\Android_Temp\\ATX88-RFID\\app\\src\\main\\res\\drawable-hdpi\\unlock_memory_able.png"
     },
     {
-        "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\drawable_menu_option.png.flat",
-        "source": "E:\\Android_Temp\\ATX88-RFID\\app\\src\\main\\res\\drawable\\menu_option.png"
-    },
-    {
         "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_barcode_option_spc_2d_aztec_code.xml.flat",
         "source": "E:\\Android_Temp\\ATX88-RFID\\app\\src\\main\\res\\layout\\dialog_barcode_option_spc_2d_aztec_code.xml"
     },
     {
-        "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_barcode_option_ssi_1d.xml.flat",
-        "source": "E:\\Android_Temp\\ATX88-RFID\\app\\src\\main\\res\\layout\\dialog_barcode_option_ssi_1d.xml"
+        "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\drawable_menu_option.png.flat",
+        "source": "E:\\Android_Temp\\ATX88-RFID\\app\\src\\main\\res\\drawable\\menu_option.png"
     },
     {
         "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\drawable_menu_stored_data.png.flat",
         "source": "E:\\Android_Temp\\ATX88-RFID\\app\\src\\main\\res\\drawable\\menu_stored_data.png"
+    },
+    {
+        "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_barcode_option_ssi_1d.xml.flat",
+        "source": "E:\\Android_Temp\\ATX88-RFID\\app\\src\\main\\res\\layout\\dialog_barcode_option_ssi_1d.xml"
     },
     {
         "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\drawable_invisible.png.flat",
@@ -188,16 +196,20 @@
         "source": "E:\\Android_Temp\\ATX88-RFID\\app\\src\\main\\res\\drawable\\menu_read_memory.png"
     },
     {
-        "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_connect_type_uart_disabled.png.flat",
-        "source": "E:\\Android_Temp\\ATX88-RFID\\app\\src\\main\\res\\drawable\\ic_connect_type_uart_disabled.png"
+        "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\drawable_background_custom.xml.flat",
+        "source": "E:\\Android_Temp\\ATX88-RFID\\app\\src\\main\\res\\drawable\\background_custom.xml"
+    },
+    {
+        "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_permalock_memory_able.png.flat",
+        "source": "E:\\Android_Temp\\ATX88-RFID\\app\\src\\main\\res\\drawable-hdpi\\permalock_memory_able.png"
     },
     {
         "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_data_list.xml.flat",
         "source": "E:\\Android_Temp\\ATX88-RFID\\app\\src\\main\\res\\layout\\item_data_list.xml"
     },
     {
-        "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_permalock_memory_able.png.flat",
-        "source": "E:\\Android_Temp\\ATX88-RFID\\app\\src\\main\\res\\drawable-hdpi\\permalock_memory_able.png"
+        "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_connect_type_uart_disabled.png.flat",
+        "source": "E:\\Android_Temp\\ATX88-RFID\\app\\src\\main\\res\\drawable\\ic_connect_type_uart_disabled.png"
     },
     {
         "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\drawable_battery3.png.flat",
@@ -222,6 +234,10 @@
     {
         "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_barcode_option_ssi_2d_composite.xml.flat",
         "source": "E:\\Android_Temp\\ATX88-RFID\\app\\src\\main\\res\\layout\\dialog_barcode_option_ssi_2d_composite.xml"
+    },
+    {
+        "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\drawable_btn_custom.xml.flat",
+        "source": "E:\\Android_Temp\\ATX88-RFID\\app\\src\\main\\res\\drawable\\btn_custom.xml"
     },
     {
         "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_drawer.png.flat",
@@ -666,6 +682,10 @@
     {
         "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_product_atsl.png.flat",
         "source": "E:\\Android_Temp\\ATX88-RFID\\app\\src\\main\\res\\drawable\\ic_product_atsl.png"
+    },
+    {
+        "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\layout_customdialogwifi.xml.flat",
+        "source": "E:\\Android_Temp\\ATX88-RFID\\app\\src\\main\\res\\layout\\customdialogwifi.xml"
     },
     {
         "merged": "E:\\Android_Temp\\ATX88-RFID\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_unknown.png.flat",

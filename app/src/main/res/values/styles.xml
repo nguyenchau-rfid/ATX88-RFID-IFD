@@ -163,7 +163,7 @@
 	
     <style name="menu_caption_textview" parent="vertical_view">
         <item name="android:layout_gravity">center_vertical</item>
-        <item name="android:textColor">@color/caption_color</item>
+        <item name="android:textColor">@color/cyan</item>
         <item name="android:textSize">16sp</item>
     </style>
     
@@ -254,5 +254,21 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">bold</item>
 	</style>
-		
+    <style name="viewParent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="loginButton" parent="viewParent">
+        <item name="android:background">@drawable/btn_custom</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="EditScreenTextInputLayoutStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorControlNormal">@color/green</item>
+        <item name="colorControlActivated">@color/red</item>
+        <item name="colorControlHighlight">@color/aquamarine</item>
+        <item name="colorAccent">@color/caption_color</item>
+        <item name="android:textColorHint">@color/blue</item>
+    </style>
 </resources>

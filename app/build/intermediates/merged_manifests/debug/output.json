@@ -21,7 +21,7 @@
       "properties": {
         "packageId": "com.atid.app.atx",
         "split": "",
-        "minSdkVersion": "19"
+        "minSdkVersion": "20"
       }
     }
   ]

@@ -21,18 +21,20 @@ public interface WebApi {
     @POST("/connect/token")
     @FormUrlEncoded
     Call<TokenAccess> TokenIFD(@Field("client_id") String clientId,
-                                @Field("client_secret") String clientSecret,
-                                @Field("grant_type") String grant_type,
-                                @Field("scopes") String scopes
+                               @Field("client_secret") String clientSecret,
+                               @Field("grant_type") String grant_type,
+                               @Field("scopes") String scopes
     );
+
     //lấy token KiotViet
     @POST("/connect/token")
     @FormUrlEncoded
     Call<TokenAccess> TokenKiotViet(@Field("client_id") String clientId,
-                                @Field("client_secret") String clientSecret,
-                                @Field("grant_type") String grant_type,
-                                @Field("scopes") String scopes
+                                    @Field("client_secret") String clientSecret,
+                                    @Field("grant_type") String grant_type,
+                                    @Field("scopes") String scopes
     );
+
     @GET("/branches?pageSize=50")
     @Headers({"Content-Type: application/x-www-form-urlencoded"})
     Call<ListChiNhanh> getAllChiNhanh(@Header("Content-Type") String token,
@@ -45,47 +47,55 @@ public interface WebApi {
     Call<User> getAuser(@Query("loginName") String username,
                         @Query("password") String pass,
                         @Header("Authorization") String token);
+
     //Lay RFIDTasks
     @GET("RFIDTasks")
     @Headers("Content-Type: application/x-www-form-urlencoded")
     Call<RFIDTasksAdapter> getRFIDTasks(@Query("responsibleUserID") double UserID,
-                        @Header("Authorization") String token);
+                                        @Header("Authorization") String token);
 
     //POST The ve server
     @FormUrlEncoded
     @POST("RFIDTasks/ReadTag")
     Call<ReadTagAdapter> PostReadTag(
-                                @Field("rfidTaskID") double Longitude,
-                                @Field("trackingGPS_Longitude") double Latitude,
-                                @Field("trackingGPS_Latitude") double TimeL,
-                                @Field("trackingGPS_Location") String Location,
-                                @Field("epc") String epc,
-                                @Header("Authorization") String token
+            @Field("rfidTaskID") double Longitude,
+            @Field("trackingGPS_Longitude") double Latitude,
+            @Field("trackingGPS_Latitude") double TimeL,
+            @Field("trackingGPS_Location") String Location,
+            @Field("epc") String epc,
+            @Header("Authorization") String token
 
     );
+
     //POST The ve server
     @Headers({
             "Content-type: application/json"
     })
     @POST("RFIDTasks/ReadTag")
     Call<PostTag> PostReadTagTest(
-           @Body PostTag posttag,
+            @Body PostTag posttag,
             @Header("Authorization") String token
 
     );
+
     //thêm nhân viên
     @POST("/api/users/Posttbluser/")
     @FormUrlEncoded
     Call<User> ThemNV(@Field("Usernam") String userName,
-                          @Field("Name") String TenNV,
-                          @Field("pass") String pass
+                      @Field("Name") String TenNV,
+                      @Field("pass") String pass
 
     );
-    // chuyen doi tu RFID sang productcode
-    @GET("/api/RFIDReferences/GetRFIDReference/")
 
-    @FormUrlEncoded
-    Call<RfidToProductCode> getRFtoProduct(@Query("RFIDTag") String RFIDTag);
+
+
+    // chuyen doi tu RFID sang productcode
+
+    @GET("/api/RFIDTasks/RFIDTagReference/epc/{epc}")
+    @Headers("Content-Type: application/x-www-form-urlencoded")
+    Call<RFIDTagReference> getRFtoProduct(@Path("epc") String RFIDTag,
+    @Header("Authorization") String token);
+
 
     // Tìm kiếm sản phẩm từ Productcode
     @GET("/api/RFIDReferences/GettblProductKiot/")
@@ -97,15 +107,16 @@ public interface WebApi {
     Call<ChiTietSP> getChitietSP(@Header("Content-Type") String token,
                                  @Header("Retailer") String Retailer,
                                  @Header("Authorization") String Authorization,
-                                 @Path("productId") Integer productid
+                                 @Path("productId") Double productid
     );
+
     //thêm thông tin địa điểm
     @POST("/api/InventoryCheckDetails/PosttblInventoryCheckDetail/")
     @FormUrlEncoded
     Call<Location> ThemLocation(@Field("TrackingGPS_Longitude") float Longitude,
-                      @Field("TrackingGPS_Latitude") float Latitude,
-                      @Field("TrackingGPS_Time") String TimeL,
-                      @Field("TrackingGPS_Location") String Location
+                                @Field("TrackingGPS_Latitude") float Latitude,
+                                @Field("TrackingGPS_Time") String TimeL,
+                                @Field("TrackingGPS_Location") String Location
 
     );
 
@@ -143,7 +154,6 @@ public interface WebApi {
                                @Header("Retailer") String Retailer,
                                @Header("Authorization") String Authorization
      );*/
-
 
 
     //thêm nhân viên

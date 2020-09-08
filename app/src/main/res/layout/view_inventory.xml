@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
-    tools:context="com.atid.app.atx.activity.view.ViewInventory" >
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:paddingBottom="@dimen/activity_vertical_margin"
+	android:paddingLeft="@dimen/activity_horizontal_margin"
+	android:paddingRight="@dimen/activity_horizontal_margin"
+	android:paddingTop="@dimen/activity_vertical_margin"
+	android:orientation="vertical"
+	tools:context="com.atid.app.atx.activity.view.ViewInventory" >
 
 	<RadioGroup android:id="@+id/method_type"
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:orientation="horizontal"
-	    android:background="@drawable/frame_round_rectangle"
-	    android:padding="8dp" >
-	    
-	    <RadioButton android:id="@+id/method_rfid"
-	        android:layout_width="0dp"
-	        android:layout_height="wrap_content"
-	        android:layout_weight="1"
-	        android:gravity="center"
-	        android:text="@string/method_rfid"
-	        android:button="@drawable/rdb_rfid_selector" />
-	    
-	    <RadioButton android:id="@+id/method_barcode"
-	        android:layout_width="0dp"
-	        android:layout_height="wrap_content"
-	        android:layout_weight="1"
-	        android:gravity="center"
-	        android:text="@string/method_barcode" 
-	        android:button="@drawable/rdb_barcode_selector"/>
-	    
-	    <RadioButton android:id="@+id/method_trigger_event_only"
-	        android:layout_width="0dp"
-	        android:layout_height="wrap_content"
-	        android:layout_weight="1"
-	        android:gravity="center"
-	        android:text="@string/method_trigger_event"
-	        android:button="@drawable/rdb_trigger_selector"/>
-	    	    
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:background="@drawable/frame_round_rectangle"
+		android:padding="8dp" >
+
+		<RadioButton android:id="@+id/method_rfid"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:gravity="center"
+			android:text="@string/method_rfid"
+			android:button="@drawable/rdb_rfid_selector" />
+
+		<RadioButton android:id="@+id/method_barcode"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:gravity="center"
+			android:text="@string/method_barcode"
+			android:button="@drawable/rdb_barcode_selector"/>
+
+		<RadioButton android:id="@+id/method_trigger_event_only"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:gravity="center"
+			android:text="@string/method_trigger_event"
+			android:button="@drawable/rdb_trigger_selector"/>
+
 	</RadioGroup>
-    
-    <View style="@style/vertical_split_5dp" />
-	
-    <!-- Sản phẩm - RFID/KIOTVIET -->
+
+	<View style="@style/vertical_split_5dp" />
+
+	<!-- Sản phẩm - RFID/KIOTVIET -->
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -76,51 +76,51 @@
 
 	</LinearLayout>
 	<!-- Data List -->
-    <ListView android:id="@+id/data_list"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        style="@style/frame_round" />
-    
-    <View style="@style/vertical_split_5dp" />
-    
-    <!-- Trigger Key List -->
-    <ListView android:id="@+id/trigger_list"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        style="@style/frame_round"
-        android:visibility="gone"/>
-    
+	<ListView android:id="@+id/data_list"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		style="@style/frame_round" />
 
-    <View style="@style/vertical_split_5dp" />
-  
-    <LinearLayout
-        style="@style/horizontal_layout"
-        tools:ignore="DisableBaselineAlignment" >
-        
-        <LinearLayout 
-            android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:orientation="vertical">
-            
-            <!-- Tag Per Second -->
-	        <TextView android:id="@+id/tag_speed"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-		        android:text="0.0 tps"
-	            android:textColor="@color/black"
-	            android:textSize="16sp"
-	            android:textStyle="bold"
-	            tools:ignore="HardcodedText,UselessLeaf"
-	            android:visibility="gone" />
-            
+	<View style="@style/vertical_split_5dp" />
+
+	<!-- Trigger Key List -->
+	<ListView android:id="@+id/trigger_list"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		style="@style/frame_round"
+		android:visibility="gone"/>
+
+
+	<View style="@style/vertical_split_5dp" />
+
+	<LinearLayout
+		style="@style/horizontal_layout"
+		tools:ignore="DisableBaselineAlignment" >
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<!-- Tag Per Second -->
+			<TextView android:id="@+id/tag_speed"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="0.0 tps"
+				android:textColor="@color/black"
+				android:textSize="16sp"
+				android:textStyle="bold"
+				tools:ignore="HardcodedText,UselessLeaf"
+				android:visibility="gone" />
+
 			<!-- Count -->
-		    <LinearLayout android:id="@+id/linear_count"
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:orientation="horizontal"
-		        tools:ignore="UselessParent" >
+			<LinearLayout android:id="@+id/linear_count"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				tools:ignore="UselessParent" >
 				<CheckBox
 					android:id="@+id/chkRFID"
 					android:layout_width="62dp"
@@ -142,123 +142,129 @@
 					android:layout_weight="2"
 					android:text="@string/tag_count"
 					android:textSize="14sp" />
-		        
-		        <TextView android:id="@+id/count"
-		            style="@style/count_value_horizontal"
-		            android:layout_width="0dp"
-		            android:layout_weight="1"
-		            android:text="0"
-		            android:textColor="@color/count"
-		            android:textSize="16sp"
-		            android:textStyle="bold"
-		            tools:ignore="HardcodedText" />
-		        
-		        <TextView android:id="@+id/total_count"
-		            style="@style/count_value_horizontal"
-		            android:layout_width="0dp"
-		            android:layout_weight="1"
-		            android:text="0"
-		            android:textColor="@color/total_count"
-		            android:textSize="16sp"
-		            android:textStyle="bold"
-		            tools:ignore="HardcodedText,UselessLeaf" />
-		        
-		    </LinearLayout>
-	        
-        </LinearLayout>
-	        
-	    <LinearLayout android:id="@+id/linear_key" 
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:orientation="vertical"
-	        tools:ignore="UselessParent"
-	        android:visibility="gone">
 
-			<LinearLayout 
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:orientation="horizontal">
-	            
-		        <TextView style="@style/count_value"
-		            android:layout_width="0dp"
-		            android:layout_weight="1"
-		            android:gravity="start"
-		            android:text="@string/key_type"
-		            android:textSize="16sp"/>
-		        
-		        <TextView android:id="@+id/key_type"
-		            style="@style/count_value_horizontal"
-		            android:layout_width="0dp"
-		            android:layout_weight="1"
-		            android:gravity="start"
-		            android:textColor="@color/total_count"
-		            android:textSize="16sp"
-		            android:textStyle="bold"/>
-	        	            
-	        </LinearLayout>
-	        
+				<TextView android:id="@+id/count"
+					style="@style/count_value_horizontal"
+					android:layout_width="0dp"
+					android:layout_weight="1"
+					android:text="0"
+					android:textColor="@color/count"
+					android:textSize="16sp"
+					android:textStyle="bold"
+					tools:ignore="HardcodedText" />
+
+				<TextView android:id="@+id/total_count"
+					style="@style/count_value_horizontal"
+					android:layout_width="0dp"
+					android:layout_weight="1"
+					android:text="0"
+					android:textColor="@color/total_count"
+					android:textSize="16sp"
+					android:textStyle="bold"
+					tools:ignore="HardcodedText,UselessLeaf" />
+
+			</LinearLayout>
+
+		</LinearLayout>
+
+		<LinearLayout android:id="@+id/linear_key"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			tools:ignore="UselessParent"
+			android:visibility="gone">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+				<TextView style="@style/count_value"
+					android:layout_width="0dp"
+					android:layout_weight="1"
+					android:gravity="start"
+					android:text="@string/key_type"
+					android:textSize="16sp"/>
+
+				<TextView android:id="@+id/key_type"
+					style="@style/count_value_horizontal"
+					android:layout_width="0dp"
+					android:layout_weight="1"
+					android:gravity="start"
+					android:textColor="@color/total_count"
+					android:textSize="16sp"
+					android:textStyle="bold"/>
+
+			</LinearLayout>
+
 			<View style="@style/vertical_split_5dp" />
-			
-	        <LinearLayout 
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:orientation="horizontal">
-	            
-		        <TextView style="@style/count_value"
-		            android:layout_width="0dp"
-		            android:layout_weight="1"
-		            android:gravity="start"
-		            android:text="@string/key_state"
-		            android:textSize="16sp"/>
-		        
-		        <TextView android:id="@+id/key_state"
-		            style="@style/count_value_horizontal"
-		            android:layout_width="0dp"
-		            android:layout_weight="1"
-		            android:gravity="start"
-		            android:textColor="@color/count"
-		            android:textSize="16sp"
-		            android:textStyle="bold"/>
-	        	            
-	        </LinearLayout>
-	        
-	    </LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+				<TextView style="@style/count_value"
+					android:layout_width="0dp"
+					android:layout_weight="1"
+					android:gravity="start"
+					android:text="@string/key_state"
+					android:textSize="16sp"/>
+
+				<TextView android:id="@+id/key_state"
+					style="@style/count_value_horizontal"
+					android:layout_width="0dp"
+					android:layout_weight="1"
+					android:gravity="start"
+					android:textColor="@color/count"
+					android:textSize="16sp"
+					android:textStyle="bold"/>
+
+			</LinearLayout>
+
+		</LinearLayout>
 	</LinearLayout>
-	        
-    <View style="@style/vertical_split_5dp" />
-            
-    <LinearLayout
-        style="@style/horizontal_layout"
-        tools:ignore="DisableBaselineAlignment" >
-            
-        <!-- Buttons -->
-        <LinearLayout android:id="@+id/linear_action"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:orientation="vertical"
-            tools:ignore="UselessParent" >
-        
-            <Button android:id="@+id/action"
-                style="@style/action_parent_size_button"
-                android:text="@string/action_start" />
-            
-            <LinearLayout style="@style/horizontal_layout" >
-                <Button
-                    android:id="@+id/setting"
-                	style="@style/action_full_size_button"
-                    android:text="@string/action_setting" />
-                
-                <Button
-                    android:id="@+id/clear"
-                	style="@style/action_full_size_button"
-                    android:text="@string/action_clear" />
-            
-                
-            </LinearLayout>
-            
-        </LinearLayout>
-        
-    </LinearLayout>
-    
+
+	<View style="@style/vertical_split_5dp" />
+
+	<LinearLayout
+		style="@style/horizontal_layout"
+		tools:ignore="DisableBaselineAlignment" >
+
+		<!-- Buttons -->
+		<LinearLayout android:id="@+id/linear_action"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="2"
+			android:orientation="vertical"
+			tools:ignore="UselessParent" >
+
+
+			<LinearLayout style="@style/horizontal_layout" >
+				<Button android:id="@+id/action"
+					style="@style/action_full_size_button"
+					android:text="@string/action_start" />
+				<Button android:id="@+id/btnUpload"
+					style="@style/action_full_size_button"
+					android:text="Upload To Server" />
+			</LinearLayout>
+
+			<LinearLayout style="@style/horizontal_layout" >
+				<Button
+					android:id="@+id/setting"
+					style="@style/action_full_size_button"
+					android:text="@string/action_setting" />
+
+				<Button
+					android:id="@+id/clear"
+					style="@style/action_full_size_button"
+					android:text="@string/action_clear" />
+
+
+			</LinearLayout>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
 </LinearLayout>

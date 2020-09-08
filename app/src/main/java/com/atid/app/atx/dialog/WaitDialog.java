@@ -22,6 +22,7 @@ public class WaitDialog {
 		dlg.setProgressStyle(style);
 		if (null != title) {
 			dlg.setTitle(title);
+
 		}
 		dlg.setMessage(message);
 		if (null != listener) {

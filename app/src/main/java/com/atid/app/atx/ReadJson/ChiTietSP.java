@@ -13,7 +13,7 @@ public class ChiTietSP {
 
     @SerializedName("id")
     @Expose
-    private Integer id;
+    private Double id;
 
     @SerializedName("retailerId")
     @Expose
@@ -88,11 +88,11 @@ public class ChiTietSP {
         this.createdDate = createdDate;
     }
 
-    public Integer getId() {
+    public Double getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Double id) {
         this.id = id;
     }
 

@@ -15,9 +15,9 @@ import java.util.Locale;
 
 public class ListViewPairedAdapter  extends BaseAdapter {
     Context c;
-    ArrayList<RfidToProductCode> RfidtoPrd;
+    ArrayList<ModelRFIDTagReference> RfidtoPrd;
 
-    public ListViewPairedAdapter(Context c, ArrayList<RfidToProductCode> RfidtoPrd) {
+    public ListViewPairedAdapter(Context c, ArrayList<ModelRFIDTagReference> RfidtoPrd) {
         this.c = c;
         this.RfidtoPrd = RfidtoPrd;
 
@@ -28,7 +28,7 @@ public class ListViewPairedAdapter  extends BaseAdapter {
     }
 
     @Override
-    public RfidToProductCode getItem(int position) {
+    public ModelRFIDTagReference getItem(int position) {
         return RfidtoPrd.get(position);
     }
 
@@ -40,7 +40,7 @@ public class ListViewPairedAdapter  extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        RfidToProductCode datamodel = getItem(position);
+        ModelRFIDTagReference datamodel = getItem(position);
         if (convertView == null) {
             convertView = LayoutInflater.from(c).inflate(R.layout.item_data_list, parent, false);
         }
@@ -51,32 +51,32 @@ public class ListViewPairedAdapter  extends BaseAdapter {
 
         LinearLayout layoutTagItem = (LinearLayout) convertView.findViewById(R.id.tag_item);
 
-        String tensp = String.format(Locale.US, "%s", datamodel.getProductcodeKiot() );
+        String tensp = String.format(Locale.US, "%s", datamodel.getKiotVietProductID() );
 
-        String  LeftFoot= String.format(Locale.US, "%s",datamodel.getShoes_IsLeftFoot()+"");
-        String  RightFoot= String.format(Locale.US, "%s", datamodel.getShoes_IsRightFoot() + "");
+      //  String  LeftFoot= String.format(Locale.US, "%s",datamodel.getShoesIsLeftFoot()+"");
 
-
-        String PairedWithTagID = String.format(Locale.US, "%s",datamodel.getShoes_PairedWithTagID()+"");
-        String TagID = String.format(Locale.US, "%s",datamodel.getRFIDTagCode()+"");
+        Boolean  RightFoot= datamodel.getShoes_IsRightFoot() ;
+        Boolean  LeftFoot= datamodel.getShoesIsLeftFoot() ;
+        String PairedWithTagID = String.valueOf(datamodel.getShoesPairedWithTagID());
+        String TagID = String.valueOf(datamodel.getRfidTagID());
 
         layoutTagItem.setVisibility(View.GONE);
 
         txtData.setText(tensp + "--"+TagID +"+"+ PairedWithTagID  );
 
-        if(LeftFoot.equals("true"))
+        if(LeftFoot==true)
             txtLeftFoot.setText("Trái");
-        else if(LeftFoot.equals("false"))
+        else if(LeftFoot==false)
             txtLeftFoot.setText("Phải");
         else
             txtLeftFoot.setText("---");
 
-        if(RightFoot.equals("true"))
-            txtRightFoot.setText("Trái");
-        else if(RightFoot.equals("false"))
-                txtRightFoot.setText("Phải");
-        else
+        if(RightFoot==null)
             txtRightFoot.setText("---");
+        else if(RightFoot)
+            txtRightFoot.setText("Trái");
+        else if(!RightFoot)
+                txtRightFoot.setText("Phải");
 
 
 

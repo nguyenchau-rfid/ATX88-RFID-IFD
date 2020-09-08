@@ -19,50 +19,39 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.Handler;
-import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.ActivityCompat;
+
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.atid.app.atx.ReadJson.ApiUnit;
-import com.atid.app.atx.ReadJson.ChiNhanhChiTiet;
-import com.atid.app.atx.ReadJson.ListChiNhanh;
 import com.atid.app.atx.ReadJson.LocationAdapter;
 import com.atid.app.atx.ReadJson.LoginAdapter;
 import com.atid.app.atx.ReadJson.ModelRFIDTasksAdapter;
-import com.atid.app.atx.ReadJson.MyService;
 import com.atid.app.atx.ReadJson.MyTask;
-import com.atid.app.atx.ReadJson.PollReceiver;
-import com.atid.app.atx.ReadJson.PostTag;
 import com.atid.app.atx.ReadJson.RFIDTasksAdapter;
-import com.atid.app.atx.ReadJson.TokenAccess;
 import com.atid.app.atx.ReadJson.TokenManager;
 import com.atid.app.atx.ReadJson.User;
 import com.atid.app.atx.ReadJson.ViewTaskAdapter;
 import com.atid.app.atx.ReadJson.WebApi;
+import com.atid.app.atx.ReadJson.WifiReceiver;
 import com.atid.app.atx.activity.DeviceManageActivity;
-import com.atid.app.atx.activity.MainActivity;
-import com.atid.app.atx.activity.view.ViewInventory;
-import com.atid.app.atx.data.Constants;
-import com.atid.app.atx.dialog.MessageBox;
+import com.atid.app.atx.dialog.CustomProgressDialogue;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -73,15 +62,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.sql.Time;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -90,16 +73,14 @@ import java.util.Map;
 import java.util.Timer;
 import java.util.concurrent.TimeUnit;
 
-import jxl.write.DateTime;
 import retrofit2.Call;
-import retrofit2.Converter;
 import retrofit2.Response;
 
 public class Main2Activity extends Activity implements GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener, LocationListener {
     private static final String TAG = Main2Activity.class.getSimpleName();
     EditText tvusername;
-    EditText tvpass;
+    EditText tvpass,tvshowpass;
     TextView txtUser;
     Button btnLogin, btnThoat;
     TextView tvXem, tvChinhanh;
@@ -108,7 +89,6 @@ public class Main2Activity extends Activity implements GoogleApiClient.Connectio
     String keyDay_Kiot = "Ngay_Kiot";
     String keyToken_IFD = "keytoken_IFD";
     String keyToken_Kiot = "keytoken_Kiot";
-
 
     AlertDialog alertGPS;
     Dialog alertWifi;
@@ -124,8 +104,12 @@ public class Main2Activity extends Activity implements GoogleApiClient.Connectio
     private GoogleApiClient mGoogleApiClient;
     private LocationRequest mLocationRequest;
     private Location mLastLocation;
-    private LocationAdapter locationAdapter=new LocationAdapter();
+    private LocationAdapter locationAdapter = new LocationAdapter();
     TokenManager ngayToken = new TokenManager();
+    Context _mContext;
+    BroadcastReceiver br = null;
+    IntentFilter filter;
+    CustomProgressDialogue object;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,25 +120,13 @@ public class Main2Activity extends Activity implements GoogleApiClient.Connectio
         verifyStoragePermissions(this);
         myDialog = new Dialog(this);
         InsDisplay();
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //  String user = tvusername.getText().toString().trim();
-                // String pass = tvpass.getText().toString().trim();
-                String user = "test1";
-                String pass = "Chau#@2020";
-                Dangnhap(user, pass);
-            }
-        });
-        btnThoat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Main4Activity.class);
-                startActivity(intent);
-                System.out.println(mLastLocation.getLatitude() + "---" + mLastLocation.getLongitude() + "");
-
-            }
-        });
+        BroadcastReceiver br = new WifiReceiver();
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
+        _mContext = getApplicationContext();
+        _mContext.registerReceiver(br, filter);
+        object = new CustomProgressDialogue(this);
+        mAPIService_DangNhap_IFD = ApiUnit.getServiceIFD();
         if (isGpsOn()) {
             Log.i("MyCurrent", "Bat GPS");
             locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
@@ -179,14 +151,43 @@ public class Main2Activity extends Activity implements GoogleApiClient.Connectio
             showGPSDisabledAlertToUser();
             Log.i("MyCurrent", "khong bat GPS");
         }
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //  String user = tvusername.getText().toString().trim();
+                // String pass = tvpass.getText().toString().trim();
+                String user = "test1";
+                String pass = "Chau#@2020";
+                object.show();
+                Dangnhap(user, pass);
 
+            }
+        });
+        btnThoat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Step 1: Defing object of HashMap Class
+                HashMap<Integer, String> HashMap = new HashMap<Integer, String>();
+                //Step 2: Adding Key Value pair
+                HashMap.put(1001, "India");
+                HashMap.put(1002, "Canada");
+                HashMap.put(1003, "Australia");
+                //Step 3: Displaying key value pairs using for loop
+                for (Map.Entry map : HashMap.entrySet()) {
+                    //Step 4: Using getKey and getValue methods to retrieve key and corresponding value
+                    if(map.getValue().equals("Australia"))
+                        System.out.println(map.getKey() + " " + map.getValue());
+                }
+                 Intent intent = new Intent(getApplicationContext(), Main4Activity.class);
+                  startActivity(intent);
+            }
+        });
     }
 
-    private boolean isGpsOn() {
 
+    private boolean isGpsOn() {
         LocationManager manager = (LocationManager) getSystemService(LOCATION_SERVICE);
         return manager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
-
     }
 
     public void TaoMoiToken() {
@@ -222,6 +223,7 @@ public class Main2Activity extends Activity implements GoogleApiClient.Connectio
         if (alertWifi != null) {
             alertWifi.dismiss();
         }
+
     }
 
     public void InsDisplay() {
@@ -232,6 +234,10 @@ public class Main2Activity extends Activity implements GoogleApiClient.Connectio
         btnThoat = findViewById(R.id.btnThoat);
         tvChinhanh = findViewById(R.id.tvChiNhanh);
         txtUser = findViewById(R.id.textView3);
+        TextInputLayout textFirstname = (TextInputLayout) findViewById(R.id.txInput);
+      //  EditText firstname = (EditText) findViewById(R.id.tvInput);
+
+
     }
 
     @Override
@@ -242,63 +248,55 @@ public class Main2Activity extends Activity implements GoogleApiClient.Connectio
         }
 
         if (isNetworkAvailable(getApplicationContext())) {
-            TaoMoiToken();
+              TaoMoiToken();
         }
 
     }
-
-//        if (isNetworkAvailable(getApplicationContext())) {
-//            alertWifi.dismiss();
-//            TaoMoiToken();
-//            //mAPIService_Token = ApiUnit.getToketService();
-//            //  startService(new Intent(getApplicationContext(), MyService.class));
-//            //ngayToken.sendToken();
-//            //  CheckexistFileToken();
-//            //   deleteFileKiemKho();
-//            tvusername.setText("");
-//            tvpass.setText("");
-//            tvusername.requestFocus();
-////            spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-////                @Override
-////                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-////                    ChiNhanhChiTiet swt = (ChiNhanhChiTiet) parent.getItemAtPosition(position);
-////                    Integer key = (Integer) swt.getMaChinhanh();
-////                    maUserID = key;
-////                    tenchinhanh = swt.getBranchName();
-////                    tvChinhanh.setText(swt.getBranchName());
-////                    //  account = new NhanVienAdapter("1", "2", machinhanh,tenchinhanh);
-////                    // Toast.makeText(getApplicationContext(), key + "----" + swt.getBranchName(), Toast.LENGTH_SHORT).show();
-////                }
-////                @Override
-////                public void onNothingSelected(AdapterView<?> parent) {
-////
-////                }
-////            });
 
     @Override
     protected void onStop() {
         if (mGoogleApiClient != null) {
             mGoogleApiClient.disconnect();
         }
-
         //    stopService(new Intent(getApplicationContext(), MyService.class));
+        finish();
         super.onStop();
     }
 
     @Override
-    protected void onResume() {
-        //  finish();
-        // startActivity(getIntent());
-//        registerReceiver(br, new IntentFilter(MyService.COUNTDOWN_BR));
-        super.onResume();
-        if (isGpsOn == true && alertGPS != null) {
-            alertGPS.dismiss();
-        }
-        if (isWifiOn == true && alertWifi != null) {
-            alertWifi.dismiss();
+    public void onResume() {
+        if (br != null) {
+            Log.d("Receiver", "Can't register receiver which already has been registered");
+        } else {
+            try {
+                br = new WifiReceiver();
+                filter = new IntentFilter();
+                filter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
+                filter.addAction(CONNECTIVITY_SERVICE);
+                _mContext = getApplicationContext();
+                _mContext.registerReceiver(br, filter);
+            } catch (Exception err) {
+                Log.e(err.getClass().getName(), err.getMessage(), err);
+            }
         }
         this.onCreate(null);
+        super.onResume();
+    }
 
+    @Override
+    public void onPause() {
+        try {
+            if (br == null) {
+                Log.d("Receiver", "Can't unregister a receiver which was never registered");
+            } else {
+                getApplicationContext().unregisterReceiver(br);
+                br = null;
+            }
+        } catch (Exception err) {
+            Log.e(err.getClass().getName(), err.getMessage(), err);
+            Log.e("Receiver not registered", "Couldn't get context");
+        }
+        super.onPause();
     }
 
     // Storage Permissions variables
@@ -308,14 +306,13 @@ public class Main2Activity extends Activity implements GoogleApiClient.Connectio
             Manifest.permission.WRITE_EXTERNAL_STORAGE
     };
 
-
     public void Dangnhap(final String username, final String Pass) {
-        mAPIService_DangNhap_IFD = ApiUnit.getServiceIFD();
         Call<User> call = mAPIService_DangNhap_IFD.getAuser(username, Pass, ngayToken.Laytoken(getApplicationContext(), keyToken_IFD));
         call.enqueue(new retrofit2.Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 if (response.isSuccessful()) {
+                    object.dismiss();
                     Toast.makeText(getApplicationContext(), "Chào Mừng " +
                             " Đăng Nhập Thành Công", Toast.LENGTH_SHORT).show();
                     //LoginAdapter nvparacel = new LoginAdapter(username, Pass, maUserID);
@@ -367,7 +364,7 @@ public class Main2Activity extends Activity implements GoogleApiClient.Connectio
     }
 
     public void LayTaskUser(double maUserID) {
-        mAPIService_DangNhap_IFD = ApiUnit.getServiceIFD();
+        //  mAPIService_DangNhap_IFD = ApiUnit.getServiceIFD();
         Call<RFIDTasksAdapter> call = mAPIService_DangNhap_IFD.getRFIDTasks(maUserID, ngayToken.Laytoken(getApplicationContext(), keyToken_IFD));
         call.enqueue(new retrofit2.Callback<RFIDTasksAdapter>() {
             @Override
@@ -379,13 +376,15 @@ public class Main2Activity extends Activity implements GoogleApiClient.Connectio
 //                        for (int i = 0; i < ListTask.size(); i++) {
 //                            System.out.println("Danh sach Task " + ListTask.get(i).getRfidTaskID() + " : " + ListTask.get(i).getDescription());
 //                        }
+
                         ShowPopup(ListTask);
-                        call.cancel();
+
 
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }
+                call.cancel();
             }
 
             @Override
@@ -416,10 +415,12 @@ public class Main2Activity extends Activity implements GoogleApiClient.Connectio
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     LoginAdapter post = new LoginAdapter();
+                    post.setVoucherType(arrayAdapter.getItem(position).getVoucherType());
                     post.setmaUserID(arrayAdapter.getItem(position).getRfidTaskID());
                     if (mLastLocation != null) {
                         post.setLongitude(locationAdapter.getTrackingGPS_Latitude());
                         post.setLatitude(locationAdapter.getTrackingGPS_Longitude());
+                        post.setLocalAddress(locationAdapter.getTrackingGPS_Location());
                     } else {
                         post.setLongitude(0);
                         post.setLatitude(0);
@@ -429,7 +430,7 @@ public class Main2Activity extends Activity implements GoogleApiClient.Connectio
                             + post.getLongitude()
                     );
                     // Intent intent = new Intent(getApplicationContext(), DeviceManageActivity.class);
-                    Intent intent = new Intent(getApplicationContext(), Main4Activity.class);
+                    Intent intent = new Intent(getApplicationContext(), DeviceManageActivity.class);
                     // intent.putExtra("parcelable", nvparacel);
                     myDialog.cancel();
                     startActivity(intent);
@@ -446,7 +447,6 @@ public class Main2Activity extends Activity implements GoogleApiClient.Connectio
         if (mLastLocation != null) {
             String diachi = "";
             diachi = getCompleteAddressString(mLastLocation.getLatitude(), mLastLocation.getLongitude());
-
             locationAdapter.setTrackingGPS_Latitude(mLastLocation.getLatitude());
             locationAdapter.setTrackingGPS_Longitude(mLastLocation.getLongitude());
             locationAdapter.setTrackingGPS_Location("" + diachi);
@@ -462,17 +462,13 @@ public class Main2Activity extends Activity implements GoogleApiClient.Connectio
         try {
             List<Address> addresses = geocoder.getFromLocation(LATITUDE, LONGITUDE, 1);
             String address = addresses.get(0).getAddressLine(0); // If any additional address line present than only, check with max available address lines by getMaxAddressLineIndex()
-
             strAdd = address;
-
-
         } catch (Exception e) {
             e.printStackTrace();
             Log.d("MyCurrent", "Canont get Address!");
         }
         return strAdd;
     }
-
 
     private void buildLocationRequest() {
         mLocationRequest = LocationRequest.create();
@@ -533,7 +529,6 @@ public class Main2Activity extends Activity implements GoogleApiClient.Connectio
         }
     }
 
-
     public void Postuser(final String username, final String Pass) {
         mAPIService_DangNhap_IFD = ApiUnit.getServiceIFD();
         mAPIService_DangNhap_IFD.ThemNV(username, "tennv", Pass).enqueue(new retrofit2.Callback<User>() {
@@ -580,7 +575,7 @@ public class Main2Activity extends Activity implements GoogleApiClient.Connectio
             isWifiOn = true;
             return true;
         } else {
-            showWifiDisabledAlertToUser();
+            // showWifiDisabledAlertToUser();
             //Log.d("Network", "Not Connected");
             return false;
         }
@@ -590,7 +585,6 @@ public class Main2Activity extends Activity implements GoogleApiClient.Connectio
         if (alertGPS == null) {
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
             alertDialogBuilder.setTitle("Kiểm Tra Kết Nối GPS Cho Thiết Bị");
-
             alertDialogBuilder.setMessage("Vui lòng bật kết nối GPS để tiếp tục sử dụng chương trình")
                     .setCancelable(false)
                     .setPositiveButton("Bật Kết Nối GPS",
@@ -609,26 +603,6 @@ public class Main2Activity extends Activity implements GoogleApiClient.Connectio
             return;
 
 
-    }
-
-    public void showWifiDisabledAlertToUser() {
-        if (alertWifi == null) {
-            AlertDialog.Builder alertWifiBuilder = new AlertDialog.Builder(this);
-            alertWifiBuilder.setTitle("Kiểm Tra Kết Nối Internet Cho Thiết Bị");
-            alertWifiBuilder.setMessage("Vui lòng bật kết nối Wifi hoặc 3G/4G để tiếp tục sử dụng chương trình")
-                    .setCancelable(false)
-                    .setPositiveButton("Bật Kết Nối Mạng",
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int id) {
-                                    Intent callWifiSettingIntent = new Intent(
-                                            android.provider.Settings.ACTION_WIFI_SETTINGS);
-                                    callWifiSettingIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                    startActivity(callWifiSettingIntent);
-                                }
-                            });
-            alertWifi = alertWifiBuilder.create();
-            alertWifi.show();
-        } else return;
     }
 
     private void requestLocationPermissions() {
@@ -688,7 +662,68 @@ public class Main2Activity extends Activity implements GoogleApiClient.Connectio
 
     }
 
-
+}
+//    @Override
+//    protected void onResume() {
+//        //  finish();
+//        // startActivity(getIntent());
+////        registerReceiver(br, new IntentFilter(MyService.COUNTDOWN_BR));
+//        super.onResume();
+//        if (isGpsOn == true && alertGPS != null) {
+//            alertGPS.dismiss();
+//        }
+//        if (isWifiOn == true && alertWifi != null) {
+//            alertWifi.dismiss();
+//        }
+//        this.onCreate(null);
+//
+//    }
+//        if (isNetworkAvailable(getApplicationContext())) {
+//            alertWifi.dismiss();
+//            TaoMoiToken();
+//            //mAPIService_Token = ApiUnit.getToketService();
+//            //  startService(new Intent(getApplicationContext(), MyService.class));
+//            //ngayToken.sendToken();
+//            //  CheckexistFileToken();
+//            //   deleteFileKiemKho();
+//            tvusername.setText("");
+//            tvpass.setText("");
+//            tvusername.requestFocus();
+////            spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+////                @Override
+////                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+////                    ChiNhanhChiTiet swt = (ChiNhanhChiTiet) parent.getItemAtPosition(position);
+////                    Integer key = (Integer) swt.getMaChinhanh();
+////                    maUserID = key;
+////                    tenchinhanh = swt.getBranchName();
+////                    tvChinhanh.setText(swt.getBranchName());
+////                    //  account = new NhanVienAdapter("1", "2", machinhanh,tenchinhanh);
+////                    // Toast.makeText(getApplicationContext(), key + "----" + swt.getBranchName(), Toast.LENGTH_SHORT).show();
+////                }
+////                @Override
+////                public void onNothingSelected(AdapterView<?> parent) {
+////
+////                }
+////            });
+//    public void showWifiDisabledAlertToUser() {
+//        if (alertWifi == null) {
+//            AlertDialog.Builder alertWifiBuilder = new AlertDialog.Builder(this);
+//            alertWifiBuilder.setTitle("Kiểm Tra Kết Nối Internet Cho Thiết Bị");
+//            alertWifiBuilder.setMessage("Vui lòng bật kết nối Wifi hoặc 3G/4G để tiếp tục sử dụng chương trình")
+//                    .setCancelable(false)
+//                    .setPositiveButton("Bật Kết Nối Mạng",
+//                            new DialogInterface.OnClickListener() {
+//                                public void onClick(DialogInterface dialog, int id) {
+//                                    Intent callWifiSettingIntent = new Intent(
+//                                            android.provider.Settings.ACTION_WIFI_SETTINGS);
+//                                    callWifiSettingIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                                    startActivity(callWifiSettingIntent);
+//                                }
+//                            });
+//            alertWifi = alertWifiBuilder.create();
+//            alertWifi.show();
+//        } else return;
+//    }
 //    private void loadSpinnerData() {
 //
 //        List<ChiNhanhChiTiet> itemList = new ArrayList<>();
@@ -751,9 +786,9 @@ public class Main2Activity extends Activity implements GoogleApiClient.Connectio
 //
 //    }
 
-    // String sdCard = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Temp_ATX";
-    //   File file = new File(sdCard);
-    //    Log.e(TAG,file + "--"+file.listFiles());
-    //      if (!file.isDirectory()) {
-    //     file.mkdirs();
-}
+// String sdCard = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Temp_ATX";
+//   File file = new File(sdCard);
+//    Log.e(TAG,file + "--"+file.listFiles());
+//      if (!file.isDirectory()) {
+//     file.mkdirs();
+
